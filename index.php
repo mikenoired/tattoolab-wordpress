@@ -15,7 +15,7 @@
 	<?php 
 		if (have_posts()):
 		    while (have_posts()) : the_post(); ?>
-		       	<article class="article">
+		       	<article>
 			       	<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" class="cardImg">
 		       		<div class="postContent">
 			       		<h2><?php the_title(); ?></h2>

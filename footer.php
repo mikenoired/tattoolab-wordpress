@@ -1,4 +1,4 @@
-	<footer class="footer">
+	<footer>
 		<p>Tattoo Laboratory | Official Site | <?php echo date('Y'); ?></p>
 		<div class="social">
 			<a href="https://vk.com/tattoo_laboratory_max_drugger"><img src="<?php bloginfo('template_directory') ?>/public/img/vk.svg" alt="VK"></a>
