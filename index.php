@@ -24,7 +24,6 @@
 		if (have_posts()):
 		    while (have_posts()) : the_post(); ?>
 		       	<div class="article">
->>>>>>> parent of 00b8dde... 1.1.1
 			       	<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" class="cardImg">
 		       		<div class="postContent">
 			       		<h2><?php the_title(); ?></h2>
