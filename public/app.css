@@ -27,7 +27,7 @@ body {
 .menuActive {
   overflow: hidden; }
 
-header {
+.main-header {
   position: relative;
   overflow: hidden;
   display: block;
@@ -35,17 +35,17 @@ header {
   /* margin-top: -32px  */
   background: url(ddea72f8499dbeabd8cb9dd6cf10a0a8.png) no-repeat;
   background-size: 100%; }
-  header img.logo {
+  .main-header img.logo {
     float: left;
     width: 400px;
     padding-top: 30px;
     margin-top: 20px;
     margin-left: 200px; }
-  header .wrapper-info {
+  .main-header .wrapper-info {
     margin-top: 50px;
     float: right;
     margin-right: 250px; }
-    header .wrapper-info .info {
+    .main-header .wrapper-info .info {
       color: #fff;
       font-size: 1em;
       float: left;
@@ -54,13 +54,13 @@ header {
       border-radius: 13px;
       background-color: rgba(0, 0, 0, 0.7);
       box-shadow: 0 3px 50px 3px rgba(0, 0, 0, 0.5); }
-      header .wrapper-info .info a {
+      .main-header .wrapper-info .info a {
         display: inline-block;
         color: white !important;
         position: relative !important;
         cursor: pointer !important;
         line-height: 0 !important; }
-        header .wrapper-info .info a:before {
+        .main-header .wrapper-info .info a:before {
           content: '' !important;
           bottom: 45% !important;
           right: 0 !important;
@@ -69,19 +69,19 @@ header {
           height: 1px !important;
           background-color: white !important;
           transition: 0.3s !important; }
-        header .wrapper-info .info a:hover:before {
+        .main-header .wrapper-info .info a:hover:before {
           width: 100% !important;
           left: 0 !important; }
-  header .nav {
+  .main-header .nav {
     float: left;
     width: 100%;
     padding: 20px 0 30px 0;
     text-align: center; }
-    header .nav .menu li {
+    .main-header .nav .menu li {
       margin: 0 20px;
       height: 100%;
       display: inline-block; }
-      header .nav .menu li a, header .nav .menu li span {
+      .main-header .nav .menu li a, .main-header .nav .menu li span {
         font-size: 2em;
         font-weight: 600;
         display: inline-block;
@@ -89,7 +89,7 @@ header {
         position: relative !important;
         cursor: pointer !important;
         line-height: 0 !important; }
-        header .nav .menu li a:before, header .nav .menu li span:before {
+        .main-header .nav .menu li a:before, .main-header .nav .menu li span:before {
           content: '' !important;
           bottom: -2px !important;
           right: 0 !important;
@@ -98,10 +98,10 @@ header {
           height: 3px !important;
           background-color: white !important;
           transition: 0.3s !important; }
-        header .nav .menu li a:hover:before, header .nav .menu li span:hover:before {
+        .main-header .nav .menu li a:hover:before, .main-header .nav .menu li span:hover:before {
           width: 100% !important;
           left: 0 !important; }
-    header .nav li.toggleNav {
+    .main-header .nav li.toggleNav {
       display: none;
       cursor: pointer;
       padding: 20px;
@@ -111,7 +111,7 @@ header {
       color: white;
       font-size: 21px;
       font-weight: bold; }
-    header .nav .current_page_item a {
+    .main-header .nav .current_page_item a {
       cursor: no-drop;
       text-decoration: line-through;
       pointer-events: none; }
@@ -251,7 +251,7 @@ header {
     width: 100%;
     height: 432px;
     box-shadow: 0px 0px 104px -6px rgba(0, 0, 0, 0.32); }
-  .content article {
+  .content .article {
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
@@ -262,31 +262,31 @@ header {
     border-radius: 13px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 3px 50px 3px rgba(255, 255, 255, 0.3); }
-    .content article .postContent {
+    .content .article .postContent {
       padding: 25px 0; }
-      .content article .postContent a {
+      .content .article .postContent a {
         font-size: 21px;
         cursor: pointer; }
-      .content article .postContent ul {
+      .content .article .postContent ul {
         display: block;
         margin: 10px auto;
         text-align: left;
         width: 80%;
         font-size: 18px; }
-      .content article .postContent ol {
+      .content .article .postContent ol {
         display: block;
         margin: 10px auto;
         text-align: left;
         width: 80%;
         font-size: 18px; }
-      .content article .postContent div {
+      .content .article .postContent div {
         display: block;
         margin: 0 auto;
         width: 80%;
         font-size: 21px; }
-      .content article .postContent h1 {
+      .content .article .postContent h1 {
         margin: 20px auto; }
-      .content article .postContent h2 {
+      .content .article .postContent h2 {
         width: 80%;
         display: inline-block;
         position: relative;
@@ -299,9 +299,9 @@ header {
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 13px;
         box-shadow: 0 3px 50px 3px rgba(255, 255, 255, 0.4); }
-        .content article .postContent h2:empty {
+        .content .article .postContent h2:empty {
           display: none; }
-      .content article .postContent h3 {
+      .content .article .postContent h3 {
         width: 80%;
         display: inline-block;
         position: relative;
@@ -309,15 +309,15 @@ header {
         font-size: 24px;
         margin: 0 auto 10px auto;
         color: blac; }
-      .content article .postContent h4 {
+      .content .article .postContent h4 {
         width: 80%;
         display: block;
         margin: 0 auto; }
-      .content article .postContent h5, .content article .postContent h6, .content article .postContent pre {
+      .content .article .postContent h5, .content .article .postContent h6, .content .article .postContent pre {
         width: 80%;
         display: block;
         margin: 0 auto; }
-      .content article .postContent img {
+      .content .article .postContent img {
         display: inline-block;
         margin: 10px;
         border-radius: 10px;
@@ -325,7 +325,7 @@ header {
         max-width: 80%;
         height: auto;
         box-shadow: 0px -2px 80px -6px rgba(0, 0, 0, 0.4); }
-      .content article .postContent .more-link {
+      .content .article .postContent .more-link {
         text-align: center;
         float: right;
         margin: 25px 20px 30px 20px;
@@ -336,28 +336,28 @@ header {
         border-radius: 99999999999px;
         background-image: linear-gradient(45deg, #f81219 -10%, #c5005c 110%);
         box-shadow: 0px 1px 23px 0 rgba(220, 34, 41, 0.5); }
-        .content article .postContent .more-link:hover {
+        .content .article .postContent .more-link:hover {
           transform: translateY(-3px);
           box-shadow: 0px 4px 23px 0 rgba(220, 34, 41, 0.5); }
-        .content article .postContent .more-link:focus {
+        .content .article .postContent .more-link:focus {
           transform: scale(0.99);
           transition: .06s;
           box-shadow: 0px 1px 15px 0 rgba(220, 34, 41, 0.5); }
-      .content article .postContent .rl-gallery-container {
+      .content .article .postContent .rl-gallery-container {
         width: 100%; }
-        .content article .postContent .rl-gallery-container .rl-gallery {
+        .content .article .postContent .rl-gallery-container .rl-gallery {
           width: 95% !important;
           margin: 0 auto !important; }
-          .content article .postContent .rl-gallery-container .rl-gallery .rl-gallery-item {
+          .content .article .postContent .rl-gallery-container .rl-gallery .rl-gallery-item {
             overflow: visible !important; }
-    .content article .cardImg {
+    .content .article .cardImg {
       width: 100%;
       margin-top: -200px;
       display: block;
       position: absolute;
       z-index: -2;
       filter: blur(4px); }
-    .content article .aboutus_block {
+    .content .article .aboutus_block {
       position: relative;
       overflow: hidden;
       text-align: center;
@@ -368,22 +368,22 @@ header {
       padding: 15px 15px 15px 15px;
       margin-bottom: 35px;
       background: rgba(255, 255, 255, 0.6); }
-      .content article .aboutus_block a {
+      .content .article .aboutus_block a {
         color: black;
         cursor: pointer; }
-      .content article .aboutus_block span {
+      .content .article .aboutus_block span {
         display: block;
         font-weight: bold;
         font-size: 1.8em;
         color: black; }
-      .content article .aboutus_block p {
+      .content .article .aboutus_block p {
         width: 90%;
         font-size: 1.2em;
         margin: 15px auto;
         display: block;
         text-align: left;
         color: black; }
-      .content article .aboutus_block img {
+      .content .article .aboutus_block img {
         margin-top: 15px;
         width: 40%;
         border-radius: 0; }
@@ -505,23 +505,23 @@ header {
   .content .tktx {
     height: 800px; } }
 
-footer {
+.footer {
   margin-top: 85px;
   text-align: center;
   width: 100%;
   background: #dc2229;
   padding: 10px 0 10px 0; }
-  footer p {
+  .footer p {
     font-size: 105%;
     color: white;
     font-weight: 500;
     margin: 5px 0; }
-  footer .social a {
+  .footer .social a {
     width: 25px;
     color: black;
     margin: 25px 0;
     cursor: pointer; }
-    footer .social a:hover {
+    .footer .social a:hover {
       opacity: 0.8; }
 
 .wp-caption-text, .disable {
