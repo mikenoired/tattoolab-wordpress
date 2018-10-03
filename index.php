@@ -1,7 +1,7 @@
 <?php get_header();
 ?>
 
-<div class="content">
+<main>
 	<?php wp_nav_menu( array(
 		'theme_location'  => 'sidebar',
 		'menu'            => '',
@@ -35,6 +35,6 @@
 		    echo '<h1 class="no-content">Записи отстутствуют</h1>';
 		endif; 
 	?>
-</div>
+</main>
 
 <?php get_footer(); ?>

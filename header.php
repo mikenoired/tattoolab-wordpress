@@ -16,11 +16,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory') ?>/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory') ?>/favicon/favicon-16x16.png">
     <link rel="manifest" href="<?php bloginfo('template_directory') ?>/favicon/site.webmanifest">
-    <link rel="mask-icon" href="<?php bloginfo('template_directory') ?>/favicon/safari-pinned-tab.svg" color="#ff1133">
-    <meta name="apple-mobile-web-app-title" content="Tattoo Laboratory">
-    <meta name="application-name" content="Tattoo Laboratory">
-    <meta name="msapplication-TileColor" content="#ff1133">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="mask-icon" href="<?php bloginfo('template_directory') ?>/favicon/safari-pinned-tab.svg" color="#dc2229">
+    <meta name="msapplication-name" content="#dc2229">
+    <meta name="msapplication-TileColor" content="/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#dc2229">
 	<!-- Meta Info -->
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -208,7 +207,7 @@
         ?>
     </div>
 
-    <div class="main-header">
+    <header>
         <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory') ?>/public/img/logo.svg" class="logo"></a>
         <div class="wrapper-info">
             <div class="info">
@@ -248,4 +247,4 @@
                 <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
             <?php endif; 
         ?>
-    </div>
+    </header>

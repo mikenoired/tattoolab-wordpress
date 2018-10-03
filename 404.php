@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="content">
+	<main>
 		<section class="notfound">
 			<h1>
 				404
@@ -8,6 +8,6 @@
 			<h2>Страница не найдена</h2>
 			<p>Вполне возможно, её удалили или ссылка неправильно введена</p>
 		</section>
-	</div>
+	</main>
 
 <?php get_footer(); ?>

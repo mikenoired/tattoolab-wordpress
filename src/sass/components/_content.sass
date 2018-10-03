@@ -1,15 +1,15 @@
-.content
+main
 	margin: 0 auto
 	padding-top: 30px
 	color: black
 	max-width: 1900px
 	text-align: center
 	h1
-		width: 60%
+		max-width: 80%
 		display: inline-block
 		position: relative
 		overflow: hidden
-		padding: 15px 30px
+		padding: 15px 50px
 		margin-bottom: 15px
 		text-align: center
 		font-size: 3em
@@ -21,7 +21,7 @@
 	p
 		display: block
 		margin: 0 auto
-		width: 90%
+		width: 80%
 		font-size: 21px
 	iframe
 		display: block
@@ -59,8 +59,10 @@
 			div
 				display: block
 				margin: 0 auto
-				width: 80%
+				max-width: 100%
 				font-size: 21px
+				img 
+					max-width: calc(100% - (10px + 10px)) !important
 			h1 
 				margin: 20px auto
 			h2
@@ -98,8 +100,7 @@
 				display: inline-block
 				margin: 10px
 				border-radius: 10px
-				min-width: 40%
-				max-width: 80%
+				max-width: calc(80% - (10px + 10px)) !important
 				height: auto
 				box-shadow: 0px -2px 80px -6px rgba(0, 0, 0, 0.4)
 			.more-link
@@ -236,7 +237,7 @@
 			margin-bottom: 10px
 
 @media screen and (max-width: 1685px)
-	.content .sidebar
+	main .sidebar
 		width: 60%
 		margin: 30px auto
 		position: relative
@@ -246,7 +247,7 @@
 			padding: 10px 20px 0
 
 @media screen and (max-width: 1310px)
-	.content .article, .content .sidebar, .content .final-tiles-gallery, .content h1
+	main .article, main .sidebar, main .final-tiles-gallery, main h1
 		width: 100% !important
 		border-radius: 0 !important
 		.article h3
@@ -256,9 +257,9 @@
 			border-radius: 0
 
 @media screen and (max-width: 1440px)
-	.content .tktx
+	main .tktx
 		height: 600px
 
 @media screen and (min-width: 2400px)
-	.content .tktx
+	main .tktx
 		height: 800px
