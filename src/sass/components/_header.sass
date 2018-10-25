@@ -1,127 +1,127 @@
-.menuActive
-    overflow: hidden
-
 header
     position: relative 
     overflow: hidden 
-    display: block 
-    box-shadow: 0px 3px 28px -5px rgba(0, 0, 0, 0.52) 
-    /* margin-top: -32px  */
-    background: url('../img/headers/main.png') no-repeat 
-    background-size: 100% 
-    img.logo  
-        float: left
-        width: 400px
-        padding-top: 30px 
-        margin-top: 20px 
-        margin-left: 200px 
-    .wrapper-info  
-        margin-top: 50px 
-        float: right 
-        margin-right: 250px 
-        .info  
-            color: #fff 
-            font-size: 1em 
-            float: left
-            padding: 20px 50px 
-            border-radius: 13px 
-            @include block(black, 0.7) 
-            a  
-                display: inline-block 
-                @include hover-link(white, 1px, 45%)      
-    .nav  
-        float: left
-        width: 100%
-        padding: 20px 0 30px 0
-        text-align: center
-        .menu li
-            margin: 0 20px
-            height: 100%
-            display: inline-block 
-            a, span
-                font-size: 2em
-                font-weight: 600 
-                display: inline-block 
-                @include hover-link(white, 3px, -2px)
-        li.toggleNav
-            display: none
-            cursor: pointer
-            padding: 20px
-            @include block(white, .5)
-            color: white
-            font-size: 21px
-            font-weight: bold
-        .current_page_item a
-            cursor: no-drop  
-            text-decoration: line-through 
-            pointer-events: none
-.min-menu
     display: block
-    position: fixed
-    text-align: center
-    width: 100vw
-    height: 100vh
-    z-index: 9999 !important
-    background-color: rgba(black, .9)
-    line-height: 50px
-    ul
-        padding-top: 100px
-        li a
-            font-size: 32px
-            font-weight: bold
-            @include hover-link(white, 3px, 45%)
-        .current_page_item a
-            cursor: no-drop !important
-            text-decoration: line-through
-    .toggleNav
-        padding-left: 30px
-        span
-            width: 45px
-            height: 3px
-            background: #fff
-            &:before
-                content: ''
-                display: block
-                width: 35px
-                height: 3px
-                margin-bottom: -12px
-                background: #fff
-                transform: rotate(45deg)
-            &:after
-                content: ''
-                display: block
-                width: 35px
-                height: 3px
-                background: #fff
-                margin-top: 10px
-                transform: rotate(-45deg)
-
+    width: 100%
+    height: 320px
+    box-shadow: 0px 3px 28px -5px rgba(0, 0, 0, 0.52)
+    .wp-custom-header
+        position: absolute
+        top: 0
+        left: 0
+        width: inherit
+        height: inherit
+        width: 100vw
+        display: inline-block
+        z-index: 0
+        opacity: .4
+        img
+            height: auto
+            min-width: 100%
+    .wrapper
+        position: relative
+        z-index: 10
+        padding: 50px 200px 0
+        .logo  
+            float: left
+            width: 50%
+            height: 200px
+            svg
+                height: 200px
+        .wrapper-info
+            width: 50%
+            float: right
+            height: 200px
+            padding: 15px 0
+            .info
+                color: #fff 
+                font-size: 1em 
+                float: right
+                padding: 20px 50px 10px
+                border-radius: 13px 
+                @include block(black, 0.7, 13px) 
+                .phone
+                    display: inline-block 
+                    @include hover-link(white, 1px, 45%)
+                    text-decoration: none
+                .social
+                    padding-top: 5px
+                    display: flex
+                    justify-content: space-between
+                    width: 100%
+                    a
+                        width: 34px
+                        height: 34px
+                        display: block
+                        svg
+                            width: 100% !important
+                            height: 100% !important
+                            transition: .2s ease-out
+                            &:hover
+                                transform: scale(.9)
+        .nav  
+            float: left
+            width: 100%
+            margin: 0
+            padding: 20px 0 30px 0
+            text-align: center
+            .menu li
+                margin: 10px 20px
+                display: inline-block
+                a, span
+                    text-decoration: none
+                    margin: 0
+                    font-size: 2em
+                    font-weight: 600 
+                    display: inline-block 
+                    @include hover-link(white, 3px, -2px)
+    &:before
+        content: ''
+        display: block
+        position: absolute
+        width: 100%
+        height: 100%
+        background-color: inherit
+        
 @media (max-width: 1257px)
     header
         background-size: auto 100%
         display: block 
-        width: 100vw 
-        padding: 0 0 15px 0 
-        img.logo  
-            float: none 
-            display: block 
-            padding: 50px 0px 0px 0px 
-            margin: 0 auto 
-            width: 70% 
-        .wrapper-info  
-            width: 100% 
-            display: block 
-            text-align: center 
-            margin: 0 auto 
-            float: none 
-            .info
-                font-size: 4.5vw
-                width: 100%
-                a
-                    @include hover-link(white, 5px, -2px)
-        .nav
-            padding-bottom: 10px
-            .menu
-                display: none
-            li.toggleNav
-                display: inline-block
+        width: 100vw
+        height: 650px
+        .wp-custom-header img
+            width: auto
+            height: inherit
+        .wrapper
+            padding: 0 0 15px 0 
+            .logo
+                float: none 
+                display: block 
+                padding: 50px 0px 0px
+                margin: 0 auto 50px
+                width: 80%
+                svg
+                    width: 100%
+            .wrapper-info  
+                width: 100% 
+                display: block 
+                text-align: center 
+                margin: 0 auto 
+                float: none
+                font-weight: 600
+                .info
+                    border-radius: 0
+                    font-size: 4.5vw
+                    width: 100%
+                    a
+                        @include hover-link(white, 5px, -2px)
+                    .social
+                        a
+                            svg
+                                width: 4.5vw
+                                height: 4.5vw
+                                g
+                                    width: 4.5vw
+                                    height: 4.5vw
+            .nav
+                padding-bottom: 10px

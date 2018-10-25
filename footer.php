@@ -1,10 +1,13 @@
 	<footer>
-		<p>Tattoo Laboratory | Official Site | <?php echo date('Y'); ?></p>
+		<p>Tattoo Laboratory | Official Site | 2017 - <?php echo date('Y'); ?></p>
 		<div class="social">
-			<a href="https://vk.com/tattoo_laboratory_max_drugger"><img src="<?php bloginfo('template_directory') ?>/public/img/vk.svg" alt="VK"></a>
-			<a href="https://facebook.com/maxdrugger"><img src="<?php bloginfo('template_directory') ?>/public/img/facebook.svg" alt="Facebook"></a>
-			<a href="https://www.instagram.com/max_drugger"><img src="<?php bloginfo('template_directory') ?>/public/img/instagram.svg" alt="Instagram"></a>
+			<a href="https://vk.com/max_drugger"><svg data-name="Layer 21" height="34" id="Layer_21" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg"><title/><path d="M21.54736,7H18.25688a.74281.74281,0,0,0-.65452.39156s-1.31237,2.41693-1.73392,3.231C14.73438,12.8125,14,12.125,14,11.10863V7.60417A1.10417,1.10417,0,0,0,12.89583,6.5h-2.474a1.9818,1.9818,0,0,0-1.751.8125s1.25626-.20312,1.25626,1.48958c0,.41974.02162,1.62723.04132,2.64a.72943.72943,0,0,1-1.273.50431,21.54029,21.54029,0,0,1-2.4982-4.54359A.69314.69314,0,0,0,5.5668,7C4.8532,7,3.42522,7,2.57719,7a.508.508,0,0,0-.47969.68481C3.00529,10.17487,6.91576,18,11.37917,18h1.87865A.74219.74219,0,0,0,14,17.25781V16.12342a.7293.7293,0,0,1,1.22868-.5315l2.24861,2.1127A1.08911,1.08911,0,0,0,18.223,18h2.95281c1.42415,0,1.42415-.98824.64768-1.75294-.54645-.53817-2.51832-2.61663-2.51832-2.61663A1.01862,1.01862,0,0,1,19.2268,12.307c.63737-.83876,1.67988-2.21175,2.122-2.79993C21.95313,8.70313,23.04688,7,21.54736,7Z" fill="#fff"/></svg></a>
+			<a href="https://facebook.com/maxdrugger"><svg data-name="Layer 21" height="34" id="Layer_21" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg"><title/><path d="M16.75,9H13.5V7a1,1,0,0,1,1-1h2V3H14a4,4,0,0,0-4,4V9H8v3h2v9h3.5V12H16Z" fill="#fff"/></svg></a>
+			<a href="https://www.instagram.com/maxdrugger"><svg version="1.1" id="Layer_21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 34" style="enable-background:new 0 0 34 34;" xml:space="preserve" width="34px"><style type="text/css">.st0{fill:#FFFFFF;}</style><title></title><g id="Слой_2"><g><g><path class="st0" d="M22.4,2.9H11.6c-5,0-9.1,4.1-9.1,9.1v10.9c0,5,4.1,9.1,9.1,9.1h10.9c5,0,9.1-4.1,9.1-9.1V11.9C31.5,6.9,27.4,2.9,22.4,2.9z M28.8,22.8c0,3.5-2.8,6.3-6.3,6.3H11.6c-3.5,0-6.3-2.8-6.3-6.3V11.9c0-3.5,2.8-6.3,6.3-6.3h10.9c3.5,0,6.3,2.8,6.3,6.3V22.8z"/></g></g><g><g><path class="st0" d="M17,10.1c-4,0-7.2,3.2-7.2,7.2s3.2,7.2,7.2,7.2s7.2-3.2,7.2-7.2S21,10.1,17,10.1z M17,21.9c-2.5,0-4.5-2-4.5-4.5c0-2.5,2-4.5,4.5-4.5s4.5,2,4.5,4.5C21.5,19.8,19.5,21.9,17,21.9z"/></g></g><g><g><circle class="st0" cx="24.8" cy="9.6" r="1"/></g></g></g></svg></a>
 		</div>
 	</footer>
+	<div class="ink-layer">
+		<div class="bg-layer"></div>
+	</div>
 	<?php wp_footer() ?>
-</html>1
+</html>

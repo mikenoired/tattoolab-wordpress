@@ -1,21 +1,14 @@
 $red: #dc2229
 $red-gradient: linear-gradient(45deg, rgba(248,18,25,1) -10%, rgba(197,0,92,1) 110%)
 
-*  
-    outline: none
-    text-decoration: none
-    margin: 0
-    padding: 0
+@import 'libs/norm'
+
+*
     font-family: 'Montserrat', sans-serif
     box-sizing: border-box
-    transition: all .3s ease-in-out
 
-html
-    min-width: 100%
-
-body  
-    transition: none
-    background: url('../img/bg.png') fixed center
+body
+    background: url('../img/bg3.png') fixed
     background-size: 100%
     overflow-x: hidden
 
@@ -23,11 +16,12 @@ body
     background: rgba(0, 0, 0, 0.3)
     color: rgb(255, 255, 255)
 
+@import 'mixins/main'
 @import 'mixins/block' 
-@import 'mixins/hover-link' 
+@import 'mixins/hover-link'
 
 @import 'components/header' 
 @import 'components/content' 
-@import 'components/footer' 
+@import 'components/footer'
 
-@import 'components/hidden' 
+@import 'components/min' 

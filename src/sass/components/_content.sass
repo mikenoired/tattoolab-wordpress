@@ -1,21 +1,20 @@
 main
 	margin: 0 auto
 	padding-top: 30px
-	color: black
 	max-width: 1900px
 	text-align: center
 	h1
-		max-width: 80%
+		width: 60%
 		display: inline-block
 		position: relative
 		overflow: hidden
 		padding: 15px 50px
-		margin-bottom: 15px
 		text-align: center
 		font-size: 3em
-		color: black
-		border-radius: 13px
-		@include block(white,0.8)
+		color: #eeeeee
+		z-index: 20
+		margin-bottom: 10px
+		@include block(black,0.8,13px)
 		&:empty
 			display: none
 	p
@@ -23,27 +22,29 @@ main
 		margin: 0 auto
 		width: 80%
 		font-size: 21px
+		color: #eeeeee
 	iframe
 		display: block
-		margin: 10px auto
+		margin: 20px auto
 		border-radius: 10px
 		width: 100%
 		height: 432px
 		box-shadow: 0px 0px 104px -6px rgba(0, 0, 0, 0.32)
-	.article
+	article
 		overflow: hidden
 		box-sizing: border-box
 		position: relative
 		width: 60%
 		margin: 0 auto 30px auto
-		border-radius: 10px
 		font-size: 21px
-		@include block(white, 0.5)
+		@include block(white, 0.6, 13px)
 		.postContent
 			padding: 25px 0
+			color: #eeeeee
 			a
 				font-size: 21px
 				cursor: pointer
+				color: $red
 			ul
 				display: block
 				margin: 10px auto
@@ -59,7 +60,6 @@ main
 			div
 				display: block
 				margin: 0 auto
-				max-width: 100%
 				font-size: 21px
 				img 
 					max-width: calc(100% - (10px + 10px)) !important
@@ -74,10 +74,7 @@ main
 				margin: 20px auto
 				text-align: center
 				font-size: 1.6em
-				color: black
-				background-color: rgba(255, 255, 255, 0.5)
-				border-radius: 13px
-				box-shadow: 0 3px 50px 3px rgba(255, 255, 255, 0.4)
+				@include block(black, 0.4, 13px)
 				&:empty
 					display: none 
 			h3
@@ -87,7 +84,6 @@ main
 				overflow: hidden
 				font-size: 24px
 				margin: 0 auto 10px auto
-				color: blac
 			h4
 				width: 80%
 				display: block
@@ -165,55 +161,29 @@ main
 				margin-top: 15px
 				width: 40%
 				border-radius: 0
-	.contacts
-		position: relative
-		overflow: hidden
-		width: 100%
-		padding: 20px 0 1px 0
-		background-color: rgba(255, 255, 255, 0.4)
-		iframe
-			display: block
-			width: 100%
-			margin: 0 auto
-			border-radius: 13px
-		p
-			display: block
-			margin: 25px auto
-			width: 80%
-			text-align: center
-			border-radius: 13px
-			box-shadow: 0 3px 50px 3px rgba(255, 255, 255, 0.4)
-			padding: 15px
-			color: black
-			font-size: 18px
-			background-color: rgba(255, 255, 255, 0.6)
-			a
-				color: black
-				cursor: pointer
-				line-height: 0
-				font-size: 18px
-	.sidebar
-		border-radius: 0
+	aside
 		padding: 10px 0
 		margin-left: 50px
 		width: 270px
 		position: absolute
-		border-radius: 10px
-		@include block(white, .7)
-		li 
-			margin: 15px 0
-			padding: 15px 0
-			display: block
-			a
-				font-size: 1.8em
-				text-align: center
-				font-weight: bold
-				@include hover-link(black, 3px, 43%)
+		@include block(black, .7, 13px)
+		ul
+			padding: 0
+			li 
+				margin: 15px 0
+				padding: 15px 0
+				display: block
+				a
+					text-decoration: none
+					font-size: 1.8em
+					text-align: center
+					font-weight: bold
+					@include hover-link(white, 3px, 43%)
 	.final-tiles-gallery
 		padding: 20px
 		margin: 0 auto
 		border-radius: 10px
-		@include block(white, 0.5)
+		@include block(black, 0.5, 13px)
 		.ftg-items .loading-bar
 			display: none
 	.notfound
@@ -221,36 +191,25 @@ main
 		display: block
 		width: 80%
 		padding: 50px 0
-		background: rgba(255, 255, 255, 0.5)
-		border-radius: 10px
-		box-shadow: 0 3px 50px 3px rgba(255, 255, 255, 0.3)
+		@include block(black, 0.5, 13px)
 		text-align: center
-		h1
-			width: 50%
-			display: block
-			position: relative
-			margin: 0 auto
-			margin-top: 10px
-			text-align: center
-		h2
-			display: block
-			margin-bottom: 10px
 
 @media screen and (max-width: 1685px)
-	main .sidebar
-		width: 60%
-		margin: 30px auto
-		position: relative
-		padding: .1px 0
-		li
-			display: inline-block
-			padding: 10px 20px 0
+	main 
+		aside 
+			width: 60%
+			margin: 30px auto
+			position: relative
+			padding: .1px 0
+			ul li
+					display: inline-block
+					padding: 10px 20px 0
 
 @media screen and (max-width: 1310px)
-	main .article, main .sidebar, main .final-tiles-gallery, main h1
+	main article, main aside, main .final-tiles-gallery, main h1, main h2
 		width: 100% !important
 		border-radius: 0 !important
-		.article h3
+		article h3
 			font-size: 30px
 		.galary
 			width: 100%
