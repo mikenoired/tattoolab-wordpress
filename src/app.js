@@ -1,6 +1,7 @@
 import Grade from './libs/grade';
 
 import './sass/style.sass';
+import './img/svg-icons.svg';
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= Parallax Background -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= //
 

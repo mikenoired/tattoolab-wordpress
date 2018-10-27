@@ -32,7 +32,6 @@ header
             width: 50%
             float: right
             height: 200px
-            padding: 15px 0
             .info
                 color: #fff 
                 font-size: 1em 
@@ -40,41 +39,58 @@ header
                 padding: 20px 50px 10px
                 border-radius: 13px 
                 @include block(black, 0.7, 13px) 
-                .phone
-                    display: inline-block 
-                    @include hover-link(white, 1px, 45%)
-                    text-decoration: none
-                .social
-                    padding-top: 5px
-                    display: flex
-                    justify-content: space-between
-                    width: 100%
-                    a
-                        width: 34px
-                        height: 34px
-                        display: block
-                        svg
-                            width: 100% !important
-                            height: 100% !important
-                            transition: .2s ease-out
-                            &:hover
-                                transform: scale(.9)
+                .menu-social-menu-container
+                    ul
+                        padding-top: 5px
+                        display: flex
+                        justify-content: space-between
+                        width: 100%
+                        padding: 0
+                        li
+                            list-style: none
+                            a
+                                span
+                                    display: none
+                                width: 34px
+                                height: 34px
+                                display: block
+                                svg
+                                    width: 100% !important
+                                    height: 100% !important
+                                    transition: .2s ease-out
+                                    &:hover
+                                        transform: scale(.9)
+                .widget_text
+                    list-style: none
+                    p a
+                        cursor: pointer
+                        color: $red
         .nav  
             float: left
             width: 100%
             margin: 0
             padding: 20px 0 30px 0
             text-align: center
-            .menu li
-                margin: 10px 20px
-                display: inline-block
-                a, span
-                    text-decoration: none
-                    margin: 0
-                    font-size: 2em
-                    font-weight: 600 
-                    display: inline-block 
-                    @include hover-link(white, 3px, -2px)
+            .menu 
+                li
+                    margin: 10px 20px
+                    display: inline-block
+                    a, span
+                        opacity: .6
+                        text-decoration: none
+                        margin: 0
+                        font-size: 2em
+                        font-weight: 600 
+                        display: inline-block 
+                        @include hover-link(white, 3px, -2px)
+                .current-menu-item a
+                    cursor: not-allowed !important
+                    pointer-events: none
+                    &:hover:before  
+                        width: 0% !important
+                        left: 0 !important
+                    opacity: 1
+                    // color: #e0878a !important
     &:before
         content: ''
         display: block
@@ -115,13 +131,11 @@ header
                     width: 100%
                     a
                         @include hover-link(white, 5px, -2px)
-                    .social
-                        a
-                            svg
-                                width: 4.5vw
-                                height: 4.5vw
-                                g
-                                    width: 4.5vw
-                                    height: 4.5vw
+                    .social a svg
+                        width: 4.5vw
+                        height: 4.5vw
+                        g
+                            width: 4.5vw
+                            height: 4.5vw
             .nav
                 padding-bottom: 10px

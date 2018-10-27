@@ -11,7 +11,7 @@ function tattoolab_res() {
     $wp_scripts->add_data( 'html5_shiv', 'conditional', 'lt IE 9' );
 	$wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9' );
 
-    wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/public/app.js', array('jquery'), '', true );
+    wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/public/app.js', '');
 }
 
 add_action('wp_enqueue_scripts', 'tattoolab_res');
@@ -20,8 +20,23 @@ add_action('wp_enqueue_scripts', 'tattoolab_res');
 register_nav_menus(array(
 	'header' => __('Header Menu'),
 	'sidebar' => __('Sidebar Menu'),
+	'social' => __('Social Links Menu')
 ));
 
 // Add thumbnails in post
 add_theme_support( 'post-thumbnails', array( 'post' ) );
 add_theme_support( 'custom-header' );
+
+// Includes
+require get_parent_theme_file_path( '/inc/icon-functions.php' ); // Icon settings
+
+// Widgets
+
+function widgetsInit() {
+	register_sidebar(array(
+		'name' => 'Текст в шапке',
+		'id' => 'headerdesc'
+	));
+}
+
+add_action('widgets_init', 'widgetsInit');
