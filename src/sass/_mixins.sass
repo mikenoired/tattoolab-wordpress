@@ -1,9 +1,14 @@
-@mixin hover-link($color, $height, $posy)  
+@mixin block($color, $opacity, $bdrs)
+    border-radius: $bdrs
+    background-color: rgba($color, $opacity)
+    box-shadow: 0 3px 50px 3px rgba($color, $opacity - .2)
+
+@mixin hover-link($color, $height, $posy)
     color: $color !important
     position: relative !important
     cursor: pointer !important
     line-height: 0 !important
-    &:before  
+    &:before
         content: '' !important
         bottom: $posy !important
         right: 0 !important
@@ -17,5 +22,3 @@
         left: 0 !important
     &:hover
         opacity: 1
-     
- 

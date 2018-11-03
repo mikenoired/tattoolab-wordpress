@@ -1,6 +1,5 @@
 	<footer>
-		<p>Tattoo Laboratory | Official Site | 2017 - <?php echo date('Y'); ?></p>
-		<?php 
+		<?php dynamic_sidebar('footerdesc');
 		if (has_nav_menu('social')):
 			wp_nav_menu( array(
 				'theme_location' => 'social',
@@ -11,8 +10,5 @@
 			) );
 		endif; ?>
 	</footer>
-	<div class="ink-layer">
-		<div class="bg-layer"></div>
-	</div>
 	<?php wp_footer() ?>
 </html>

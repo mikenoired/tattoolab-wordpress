@@ -1,4 +1,5 @@
 main
+	width: 100%
 	margin: 0 auto
 	padding-top: 30px
 	max-width: 1900px
@@ -11,10 +12,10 @@ main
 		padding: 15px 50px
 		text-align: center
 		font-size: 3em
-		color: #eeeeee
+		color: $white
 		z-index: 20
-		margin-bottom: 10px
-		@include block(black,0.8,13px)
+		margin: 0 0 10px 0
+		@include block(black, 0.8, 13px)
 		&:empty
 			display: none
 	p
@@ -22,14 +23,13 @@ main
 		margin: 0 auto
 		width: 80%
 		font-size: 21px
-		color: #eeeeee
+		color: $white
 	iframe
 		display: block
 		margin: 20px auto
-		border-radius: 10px
 		width: 100%
 		height: 432px
-		box-shadow: 0px 0px 104px -6px rgba(0, 0, 0, 0.32)
+		@include block(black, 0.8, 13px)
 	article
 		overflow: hidden
 		box-sizing: border-box
@@ -40,11 +40,14 @@ main
 		@include block(black, 0.6, 13px)
 		.postContent
 			padding: 25px 0
-			color: #eeeeee
+			color: $white
 			a
 				font-size: 21px
 				cursor: pointer
 				color: $red
+				text-decoration: none
+				&:hover
+					text-decoration: underline !important
 			ul
 				display: block
 				margin: 10px auto
@@ -61,9 +64,9 @@ main
 				display: block
 				margin: 0 auto
 				font-size: 21px
-				img 
+				img
 					max-width: calc(100% - (10px + 10px)) !important
-			h1 
+			h1
 				margin: 20px auto
 			h2
 				width: 80%
@@ -76,7 +79,7 @@ main
 				font-size: 1.6em
 				@include block(black, 0.4, 13px)
 				&:empty
-					display: none 
+					display: none
 			h3
 				width: 80%
 				display: inline-block
@@ -135,13 +138,13 @@ main
 			filter: blur(4px)
 	aside
 		padding: 10px 0
-		margin: 30px 0 0 50px
+		margin: 0 0 0 50px
 		width: 270px
 		position: absolute
 		@include block(black, .7, 13px)
 		ul
 			padding: 0
-			li 
+			li
 				margin: 15px 0
 				padding: 15px 0
 				display: block
@@ -155,7 +158,7 @@ main
 			.current-menu-item a
 				cursor: not-allowed !important
 				pointer-events: none
-				&:hover:before  
+				&:hover:before
 					width: 0% !important
 					left: 0 !important
 				opacity: 1
@@ -175,13 +178,13 @@ main
 		text-align: center
 
 @media screen and (max-width: 1685px)
-	main 
-		aside 
+	main
+		aside
 			width: 60%
 			margin: 0 auto 30px
 			padding: 10px 0 5px
 			position: relative
-			ul 
+			ul
 				margin: 0
 				li
 					display: inline-block
