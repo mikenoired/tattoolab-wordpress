@@ -23,7 +23,7 @@
 		    <?php endwhile;
 		else:
 		    echo '<h1 class="no-content">Записи отстутствуют</h1>';
-		endif; 
+		endif;
 	?>
 </main>
 

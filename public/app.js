@@ -1,1 +1,329 @@
-!function(e){function t(i){if(n[i])return n[i].exports;var r=n[i]={i:i,l:!1,exports:{}};return e[i].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,i){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:i})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}([function(e,t,n){"use strict";function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),a=["webkit"],s=function(){function e(t,n,r){i(this,e),this.callback=r||null,this.container=t,this.image=this.container.querySelector(n)||this.container.querySelector("img"),this.gradientData=[],this.image&&this.container&&(this.canvas=document.createElement("canvas"),this.ctx=this.canvas.getContext("2d"),this.imageDimensions={width:0,height:0},this.imageData=[],this.readImage())}return r(e,[{key:"readImage",value:function(){this.imageDimensions.width=.1*this.image.width,this.imageDimensions.height=.1*this.image.height,this.render()}},{key:"getImageData",value:function(){var e=this.ctx.getImageData(0,0,this.imageDimensions.width,this.imageDimensions.height).data;this.imageData=Array.from(e)}},{key:"getChunkedImageData",value:function(){return this.imageData.reduce(function(e,t,n){var i=Math.floor(n/4);return e[i]||(e[i]=[]),e[i].push(t),e},[]).filter(function(e){return e.slice(0,2).every(function(e){return e<250})&&e.slice(0,2).every(function(e){return e>0})})}},{key:"getRGBAGradientValues",value:function(e){return e.map(function(e,t){return"rgb("+e.rgba.slice(0,3).join(",")+") "+(0==t?"0%":"75%")}).join(",")}},{key:"getCSSGradientProperty",value:function(e){var t=this.getRGBAGradientValues(e);return a.map(function(e){return"background-image: -"+e+"-linear-gradient(\n                        135deg,\n                        "+t+"\n                    )"}).concat(["background-image: linear-gradient(\n                    135deg,\n                    "+t+"\n                )"]).join(";")}},{key:"getMiddleRGB",value:function(e,t){var n=0,i=(n+1)/2,r=1-i;return[parseInt(e[0]*i+t[0]*r),parseInt(e[1]*i+t[1]*r),parseInt(e[2]*i+t[2]*r)]}},{key:"getSortedValues",value:function(e){return Object.keys(e).map(function(t){var n=t,i=t.split("|"),r=(299*i[0]+587*i[1]+114*i[2])/1e3;return{rgba:n.split("|"),occurs:e[t],brightness:r}}).sort(function(e,t){return e.occurs-t.occurs}).reverse().slice(0,10).sort(function(e,t){return e.brightness-t.brightness}).reverse()}},{key:"getTextProperty",value:function(e){var t=this.getMiddleRGB(e[0].rgba.slice(0,3),e[1].rgba.slice(0,3));return Math.round((299*parseInt(t[0])+587*parseInt(t[1])+114*parseInt(t[2]))/1e3)>125?"color: #000":"color: #fff"}},{key:"getTopValues",value:function(e){var t=this.getSortedValues(e);return[t[0],t[t.length-1]]}},{key:"getUniqValues",value:function(e){return e.reduce(function(e,t){var n=t.join("|");return e[n]?(e[n]=++e[n],e):(e[n]=1,e)},{})}},{key:"renderGradient",value:function(){var e=window.localStorage,t="grade-"+this.image.getAttribute("src"),n=null;if(e&&e.getItem(t))n=JSON.parse(e.getItem(t));else{var i=this.getChunkedImageData();n=this.getTopValues(this.getUniqValues(i)),e&&e.setItem(t,JSON.stringify(n))}if(this.callback)return void(this.gradientData=n);var r=this.getCSSGradientProperty(n),a=this.getTextProperty(n),s=(this.container.getAttribute("style")||"")+"; "+r+"; "+a;this.container.setAttribute("style",s)}},{key:"render",value:function(){this.canvas.width=this.imageDimensions.width,this.canvas.height=this.imageDimensions.height,this.ctx.drawImage(this.image,0,0,this.imageDimensions.width,this.imageDimensions.height),this.getImageData(),this.renderGradient()}}]),e}();e.exports=function(e,t,n){var i=function(e,t,n){var i=new s(e,t,n),r=i.gradientData;return r.length?{element:e,gradientData:r}:null},r=(NodeList.prototype.isPrototypeOf(e)?Array.from(e).map(function(e){return i(e,t,n)}):[i(e,t,n)]).filter(Boolean);if(r.length)return n(r)}},function(e,t){},function(e,t){e.exports="data:image/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSAiaW1nL2xvZ28uc3ZnIjs="},function(e,t){e.exports="data:image/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSAiaW1nL3N2Zy1pY29ucy5zdmciOw=="},function(e,t,n){"use strict";function i(e){return e&&e.__esModule?e:{default:e}}var r=n(0),a=i(r);n(1),n(3),n(2),window.onscroll=function(){var e=window.pageYOffset/2;document.body.style.backgroundPosition="left -"+e+"px"},window.addEventListener("load",function(){(0,a.default)(document.querySelectorAll("header"))})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var prefixes = ['webkit'];
+
+var Grade = function () {
+    function Grade(container, img_selector, callback) {
+        _classCallCheck(this, Grade);
+
+        this.callback = callback || null;
+        this.container = container;
+        this.image = this.container.querySelector(img_selector) || this.container.querySelector('img');
+        this.gradientData = [];
+        if (!this.image || !this.container) {
+            return;
+        }
+        this.canvas = document.createElement('canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.imageDimensions = {
+            width: 0,
+            height: 0
+        };
+        this.imageData = [];
+        this.readImage();
+    }
+
+    _createClass(Grade, [{
+        key: 'readImage',
+        value: function readImage() {
+            this.imageDimensions.width = this.image.width * 0.1;
+            this.imageDimensions.height = this.image.height * 0.1;
+            this.render();
+        }
+    }, {
+        key: 'getImageData',
+        value: function getImageData() {
+            var imageData = this.ctx.getImageData(0, 0, this.imageDimensions.width, this.imageDimensions.height).data;
+            this.imageData = Array.from(imageData);
+        }
+    }, {
+        key: 'getChunkedImageData',
+        value: function getChunkedImageData() {
+            var perChunk = 4;
+
+            var chunked = this.imageData.reduce(function (ar, it, i) {
+                var ix = Math.floor(i / perChunk);
+                if (!ar[ix]) {
+                    ar[ix] = [];
+                }
+                ar[ix].push(it);
+                return ar;
+            }, []);
+
+            var filtered = chunked.filter(function (rgba) {
+                return rgba.slice(0, 2).every(function (val) {
+                    return val < 250;
+                }) && rgba.slice(0, 2).every(function (val) {
+                    return val > 0;
+                });
+            });
+
+            return filtered;
+        }
+    }, {
+        key: 'getRGBAGradientValues',
+        value: function getRGBAGradientValues(top) {
+            return top.map(function (color, index) {
+                return 'rgb(' + color.rgba.slice(0, 3).join(',') + ') ' + (index == 0 ? '0%' : '75%');
+            }).join(',');
+        }
+    }, {
+        key: 'getCSSGradientProperty',
+        value: function getCSSGradientProperty(top) {
+            var val = this.getRGBAGradientValues(top);
+            return prefixes.map(function (prefix) {
+                return 'background-image: -' + prefix + '-linear-gradient(\n                        135deg,\n                        ' + val + '\n                    )';
+            }).concat(['background-image: linear-gradient(\n                    135deg,\n                    ' + val + '\n                )']).join(';');
+        }
+    }, {
+        key: 'getMiddleRGB',
+        value: function getMiddleRGB(start, end) {
+            var w = 0.5 * 2 - 1;
+            var w1 = (w + 1) / 2.0;
+            var w2 = 1 - w1;
+            var rgb = [parseInt(start[0] * w1 + end[0] * w2), parseInt(start[1] * w1 + end[1] * w2), parseInt(start[2] * w1 + end[2] * w2)];
+            return rgb;
+        }
+    }, {
+        key: 'getSortedValues',
+        value: function getSortedValues(uniq) {
+            var occurs = Object.keys(uniq).map(function (key) {
+                var rgbaKey = key;
+                var components = key.split('|'),
+                    brightness = (components[0] * 299 + components[1] * 587 + components[2] * 114) / 1000;
+                return {
+                    rgba: rgbaKey.split('|'),
+                    occurs: uniq[key],
+                    brightness: brightness
+                };
+            }).sort(function (a, b) {
+                return a.occurs - b.occurs;
+            }).reverse().slice(0, 10);
+            return occurs.sort(function (a, b) {
+                return a.brightness - b.brightness;
+            }).reverse();
+        }
+    }, {
+        key: 'getTextProperty',
+        value: function getTextProperty(top) {
+            var rgb = this.getMiddleRGB(top[0].rgba.slice(0, 3), top[1].rgba.slice(0, 3));
+            var o = Math.round((parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) / 1000);
+            if (o > 125) {
+                return 'color: #000';
+            } else {
+                return 'color: #fff';
+            }
+        }
+    }, {
+        key: 'getTopValues',
+        value: function getTopValues(uniq) {
+            var sorted = this.getSortedValues(uniq);
+            return [sorted[0], sorted[sorted.length - 1]];
+        }
+    }, {
+        key: 'getUniqValues',
+        value: function getUniqValues(chunked) {
+            return chunked.reduce(function (accum, current) {
+                var key = current.join('|');
+                if (!accum[key]) {
+                    accum[key] = 1;
+                    return accum;
+                }
+                accum[key] = ++accum[key];
+                return accum;
+            }, {});
+        }
+    }, {
+        key: 'renderGradient',
+        value: function renderGradient() {
+            var ls = window.localStorage;
+            var item_name = 'grade-' + this.image.getAttribute('src');
+            var top = null;
+
+            if (ls && ls.getItem(item_name)) {
+                top = JSON.parse(ls.getItem(item_name));
+            } else {
+                var chunked = this.getChunkedImageData();
+                top = this.getTopValues(this.getUniqValues(chunked));
+
+                if (ls) {
+                    ls.setItem(item_name, JSON.stringify(top));
+                }
+            }
+
+            if (this.callback) {
+                this.gradientData = top;
+                return;
+            }
+
+            var gradientProperty = this.getCSSGradientProperty(top);
+
+            var textProperty = this.getTextProperty(top);
+
+            var style = (this.container.getAttribute('style') || '') + '; ' + gradientProperty + '; ' + textProperty;
+            this.container.setAttribute('style', style);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            this.canvas.width = this.imageDimensions.width;
+            this.canvas.height = this.imageDimensions.height;
+            this.ctx.drawImage(this.image, 0, 0, this.imageDimensions.width, this.imageDimensions.height);
+            this.getImageData();
+            this.renderGradient();
+        }
+    }]);
+
+    return Grade;
+}();
+
+module.exports = function (containers, img_selector, callback) {
+    var init = function init(container, img_selector, callback) {
+        var grade = new Grade(container, img_selector, callback),
+            gradientData = grade.gradientData;
+        if (!gradientData.length) {
+            return null;
+        }
+        return {
+            element: container,
+            gradientData: gradientData
+        };
+    };
+    var results = (NodeList.prototype.isPrototypeOf(containers) ? Array.from(containers).map(function (container) {
+        return init(container, img_selector, callback);
+    }) : [init(containers, img_selector, callback)]).filter(Boolean);
+
+    if (results.length) {
+        return callback(results);
+    }
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSAiaW1nL2xvZ28uc3ZnIjs="
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSAiaW1nL3N2Zy1pY29ucy5zdmciOw=="
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _grade = __webpack_require__(0);
+
+var _grade2 = _interopRequireDefault(_grade);
+
+__webpack_require__(1);
+
+__webpack_require__(3);
+
+__webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= Parallax Background -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= //
+
+window.onscroll = function () {
+    var pos = window.pageYOffset / 2;
+    document.body.style.backgroundPosition = 'left -' + pos + "px";
+};
+
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= Gradient on header -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= //
+
+window.addEventListener('load', function () {
+    (0, _grade2.default)(document.querySelectorAll('header'));
+});
+
+/***/ })
+/******/ ]);
