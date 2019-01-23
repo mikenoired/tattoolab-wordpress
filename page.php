@@ -1,6 +1,4 @@
-<?php get_header();
-?>
-
+<?php get_header(); ?>
 <main>
 	<?php wp_nav_menu( array(
 			'theme_location'  => 'sidebar',
@@ -24,5 +22,4 @@
 		echo '<h1 class="no-content">Запись отстутствуют</h1>';
 	endif; ?>
 </main>
-
 <?php get_footer(); ?>

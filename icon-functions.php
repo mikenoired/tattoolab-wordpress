@@ -161,5 +161,3 @@ function tattoolab_social_links_icons() {
 	 */
 	return apply_filters( 'tattoolab_social_links_icons', $social_links_icons );
 }
-
-?>

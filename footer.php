@@ -7,8 +7,10 @@
 				'depth'          => 1,
 				'link_before'    => '<span>',
 				'link_after'     => '</span>'.tattoolab_get_svg( array( 'icon' => 'chain' ) ),
-			) );
-		endif; ?>
+			));
+		endif;
+		echo "<p style='color: white; margin: 0;'>2017 – " . date("Y") . "</p>";
+		?>
 	</footer>
 	<?php wp_footer() ?>
 </html>
