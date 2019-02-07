@@ -1,0 +1,24 @@
+=block($color, $opacity, $bdrs)
+  border-radius: $bdrs
+  background-color: rgba($color, $opacity)
+  box-shadow: 0 3px 50px 3px rgba($color, $opacity - .2)
+
+=hover-link($color, $height, $posy)
+  color: $color
+  position: relative
+  cursor: pointer
+  line-height: 0
+  &:before
+    content: ""
+    bottom: $posy
+    right: 0
+    position: absolute
+    width: 0%
+    height: $height
+    background-color: $color
+    transition: .3s
+  &:hover:before
+    width: 100%
+    left: 0
+  &:hover
+    opacity: 1

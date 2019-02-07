@@ -1,0 +1,26 @@
+main
+  width: 100%
+  margin: 0 auto
+  padding-top: 30px
+  max-width: 1900px
+  text-align: center
+  h1
+    width: calc(60% - 100px)
+    display: inline-block
+    position: relative
+    overflow: hidden
+    padding: 15px 50px
+    text-align: center
+    font-size: 3em
+    color: $white
+    z-index: 20
+    margin: 0 0 10px 0
+    +block($black, 1, 7px)
+    &:empty
+      display: none
+
+@media screen and (max-width: 1310px)
+  main h1
+    font-size: 44px
+    width: calc(100% - 100px)
+    border-radius: 0

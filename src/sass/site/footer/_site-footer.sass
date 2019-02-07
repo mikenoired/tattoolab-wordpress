@@ -4,6 +4,7 @@ footer
 	width: 100%
 	background: $red
 	padding: 20px 0 0
+	box-shadow: 0px -3px 100px -10px $red
 	li
 		list-style: none
 		div p
@@ -12,31 +13,25 @@ footer
 			font-weight: 500
 			margin-bottom: 5px
 			margin-top: 0
-	div
+	.menu-social-menu-container
 		text-align: center
-		margin: 10px 0
+		margin: 0 0 10px
 		padding: 0
 		ul
 			margin: 0
-			padding: 0
+			display: block
 			li
-				width: 34px
-				height: 34px
 				display: inline-block
-				margin: 0 5px
-				span
-					display: none
-				a svg
-					width: 100%
-					height: 100%
-					cursor: pointer
-					&:hover
-						opacity: .8
+				padding-right: 20px
+				&:last-child
+					padding: 0
+	.years
+		margin: 0 0 20px
+		color: white
 	.credits
 		display: block
 		text-decoration: none
 		color: $white
-		margin: 20px 0 0
 		background: black
 		font-size: 24px
 		font-weight: 600
