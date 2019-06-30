@@ -10,7 +10,7 @@ function tattoolab_include_svg_icons()
 
   // If it exists, include it.
   if (file_exists($svg_icons)) {
-      require_once($svg_icons);
+    require_once($svg_icons);
   }
 }
 add_action('wp_footer', 'tattoolab_include_svg_icons', 9999);
@@ -20,20 +20,20 @@ function tattoolab_get_svg($args = array())
 {
   // Make sure $args are an array.
   if (empty($args)) {
-      return __('Please define default parameters in the form of an array.');
+    return __('Please define default parameters in the form of an array.');
   }
 
   // Define an icon.
   if (false === array_key_exists('icon', $args)) {
-      return __('Please define an SVG icon filename.');
+    return __('Please define an SVG icon filename.');
   }
 
   // Set defaults.
   $defaults = array(
-      'icon'        => '',
-      'title'       => '',
-      'desc'        => '',
-      'fallback'    => false,
+    'icon'        => '',
+    'title'       => '',
+    'desc'        => '',
+    'fallback'    => false,
   );
 
   // Parse args.
@@ -99,7 +99,7 @@ function tattoolab_nav_menu_social_icons($item_output, $item, $depth, $args)
   if ('social' === $args->theme_location) {
     foreach ($social_icons as $attr => $value) {
       if (false !== strpos($item_output, $attr)) {
-        $item_output = str_replace($args->link_after, '</span>' . tattoolab_get_svg(array( 'icon' => esc_attr($value) )), $item_output);
+        $item_output = str_replace($args->link_after, '</span>' . tattoolab_get_svg(array('icon' => esc_attr($value))), $item_output);
       }
     }
   }
