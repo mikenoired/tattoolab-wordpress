@@ -17,3 +17,4 @@ git clone https://github.com/unkstd/tattoolab-wordpress.git
   * Responsive Lightbox & Gallery
   * WP Disable
   * WP Super Cache
+  * Super Progressive Web Apps
