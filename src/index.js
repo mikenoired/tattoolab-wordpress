@@ -1,6 +1,5 @@
 import "normalize.css";
 import "./sass/style.sass";
-import "./assets/img/svg-icons.svg";
 
 window.onscroll = () => {
   // Parallax Background
