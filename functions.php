@@ -10,7 +10,7 @@ add_action('wp_enqueue_scripts', 'tattoolab_res');
 
 register_nav_menus(array( // Navigation
   'header' => __('Header Menu'),
-  'posthd' => __('Under Header Menu'),
+  'bottomHeader' => __('Under Header Menu'),
   'sidebar' => __('Sidebar Menu'),
   'social' => __('Social Links Menu')
 ));
@@ -29,7 +29,7 @@ function widgetsInit()
   ));
   register_sidebar(array(
     'name' => 'Текст в подвале',
-    'id' => 'footerdesc'
+    'id' => 'footerDescription'
   ));
 }
 add_action('widgets_init', 'widgetsInit');
@@ -68,5 +68,3 @@ function disable_emoji_remove_dns_prefetch($urls, $relation_type)
   }
   return $urls;
 }
-
-if (!is_admin()) wp_deregister_script('jquery');

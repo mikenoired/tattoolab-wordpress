@@ -23,6 +23,30 @@
   <meta name="msapplication-TileColor" content="<?php bloginfo('template_directory') ?>/dist/mstile-144x144.png">
   <meta name="theme-color" content="#dc2229">
 
+  <style>
+    html {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: url(<?php bloginfo('template_directory') ?>/dist/assets/img/bg-min.jpg) fixed;
+      background-size: 100%;
+      overflow-x: hidden;
+      transition: none;
+    }
+
+    ::selection {
+      background: black;
+      color: #dc2229
+    }
+
+    ::-moz-selection {
+      background: black;
+      color: #dc2229
+    }
+  </style>
+
   <script async src="//www.googletagmanager.com/gtag/js?id=UA-122315342-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -35,7 +59,7 @@
     gtag('config', 'UA-122315342-1');
   </script>
 
-  <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700&display=fallback" rel="stylesheet">
 
   <meta property="og:url" content="<?php get_home_url(); ?>">
   <meta property="og:type" content="article">
@@ -49,8 +73,8 @@
 
 <body <?php body_class(); ?>>
   <header style="background-image: url('<?php echo (get_header_image()) ?>');">
-    <a href="<?php echo home_url(); ?>" class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1619 757.74">
+    <a aria-label="Логотип Tattoo Laboratory" href="<?php echo home_url(); ?>" class="logo">
+      <svg xmlns="//www.w3.org/2000/svg" viewBox="0 0 1619 757.74">
         <style>
           .square {
             fill: #dc2229;
@@ -69,30 +93,28 @@
         </g>
       </svg>
     </a>
-    <div class="wrapper-info">
-      <div class="info">
-        <?php
-        dynamic_sidebar('headerdesc');
-        if (has_nav_menu('social')) :
-          wp_nav_menu(array(
-            'theme_location' => 'social',
-            'menu_class' => 'social',
-            'link_before' => '<span>',
-            'link_after' => '</span>' . tattoolab_get_svg(array('icon' => 'chain'))
-          ));
-        endif; ?>
-      </div>
-    </div>
+    <section class="info">
+      <ul class="headerDescription"><?php dynamic_sidebar('headerdesc') ?></ul>
+      <?php if (has_nav_menu('social')) :
+        wp_nav_menu(array(
+          'theme_location' => 'social',
+          'container_class' => 'social',
+          'link_before' => '<span>',
+          'link_after' => '</span>' . tattoolab_get_svg(array('icon' => 'chain'))
+        ));
+      endif; ?>
+    </section>
     <?php
     wp_nav_menu(array(
       'theme_location' => 'header',
       'container' => 'nav',
+      'container_class' => 'menuHeader',
       'items_wrap' => '<ul>%3$s</ul>'
     ));
     wp_nav_menu(array(
-      'theme_location' => 'posthd',
+      'theme_location' => 'bottomHeader',
       'container' => 'nav',
-      'container_class' => 'menu',
+      'container_class' => 'bottomHeader',
       'items_wrap' => '<ul>%3$s<ul>'
     )); ?>
   </header>

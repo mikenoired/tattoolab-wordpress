@@ -1,20 +1,15 @@
 <?php get_header(); ?>
-<main>
+<main itemscope itemtype="http://schema.org/BlogPosting">
   <?php
-    wp_nav_menu( array(
-      'theme_location'  => 'sidebar',
-      'container'       => 'aside',
-      'items_wrap'      => '<ul>%3$s</ul>',
-    ));
-    if (have_posts()):
-      while (have_posts()) : the_post(); ?>
-       <article>
-         <h2><?php the_title(); ?></h2>
-         <?php the_content('Читать далее'); ?>
-       </article>
+  if (have_posts()) :
+    while (have_posts()) : the_post(); ?>
+      <article itemprop="articleBody">
+        <h1 itemprop="headline"><?php the_title(); ?></h1>
+        <?php the_content('Читать далее'); ?>
+      </article>
     <?php endwhile;
-      else: echo '<h1 class="no-content">Записи отстутствуют</h1>';
-    endif;
+  else : echo '<h1 class="noContent">Записи отстутствуют</h1>';
+  endif;
   ?>
 </main>
 <?php get_footer(); ?>

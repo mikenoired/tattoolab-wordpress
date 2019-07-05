@@ -58,7 +58,7 @@ module.exports = merge(common, {
       filename: "[file].map"
     }),
     new BrowserSyncPlugin({
-      proxy: "tattoo-laboratory.ru:8888",
+      proxy: "tattoolab.ru:8888",
       port: 3000,
       files: ["**/*.php"],
       ghostMode: {
