@@ -35,27 +35,6 @@ window.addEventListener('load', () => {
       );
   }
 
-  // FIXME: Наведение на картинку в галерее
-  // // Gallery Image Hover
-  // Array.from(
-  //   document.querySelectorAll('.wp-block-gallery .wp-block-image'),
-  // ).forEach((img) => {
-  //   img.addEventListener('mousemove', (ev) => {
-  //     const x = ev.layerX / img.clientWidth
-  //     const y = ev.layerY / img.clientWidth
-  //     const ofS = 7
-  //     img.setAttribute(
-  //       'style',
-  //       `transform: translate(${x * ofS - ofS / 2}px, ${
-  //         y * ofS - ofS / 2
-  //       }px)`,
-  //     )
-  //   })
-  //   img.addEventListener('mouseout', () => {
-  //     img.setAttribute('style', '')
-  //   })
-  // })
-
   // Add description to multiple link element in menu
   document.querySelectorAll('.menu-item-has-children').forEach((multItem) => {
     const mItem = multItem;
@@ -74,7 +53,6 @@ window.addEventListener('load', () => {
   });
 
   // Set Masonry grid
-  // eslint-disable-next-line no-unused-vars
   let masonry = new Masonry(document.querySelector('.frontPage'), {
     itemSelector: '.post',
     gutter: 30,
@@ -94,31 +72,4 @@ window.addEventListener('load', () => {
     columnWidth: '.grid-sizer',
     percentPosition: true,
   });
-
-  // ---- Open/Close letter form ----
-
-  document.getElementById('devButton').onclick = () => {
-    document.body.classList.toggle('noScroll');
-    gsap.to('.devPeriod__block', {
-      display: 'flex',
-      duration: 2,
-      ease: 'cubic',
-      opacity: 1,
-    });
-  };
-
-  document.getElementById('devButtonClose').onclick = () => {
-    document.body.classList.toggle('noScroll');
-    gsap.to('.devPeriod__block', {
-      display: 'none',
-      duration: 2,
-      ease: 'cubic',
-      opacity: 0,
-    });
-  };
-
-  document.querySelector(
-    // Put user system data to letter
-    '.wpcf7-textarea',
-  ).value = `${window.navigator.userAgent}\n\n`;
 });
