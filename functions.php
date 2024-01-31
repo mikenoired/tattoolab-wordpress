@@ -35,10 +35,6 @@ function widgetsInit() { // Widgets
     'name' => 'Ссылки на соц. сети',
     'id' => 'social_links'
   ) );
-  register_sidebar(array(
-    'name' => 'Форма для тестирования сайта',
-    'id' => 'dev_field'
-  ));
 }
 add_action('widgets_init', 'widgetsInit');
 

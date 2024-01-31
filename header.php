@@ -46,24 +46,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-  <div class="devPeriod__button" id="devButton">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  </div>
-
-  <div class="devPeriod__block" id="devContent">
-    <div class="info">
-      <div id="devButtonClose" class="close">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </div>
-      <?php dynamic_sidebar('dev_field'); ?>
-    </div>
-  </div>
-
   <div class="loader" id="screenLoader"></div>
 
   <div id="lightboxContainer" class="lightbox">
