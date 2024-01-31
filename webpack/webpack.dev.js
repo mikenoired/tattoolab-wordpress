@@ -1,78 +1,73 @@
-const common = require("./webpack.common");
-const merge = require("webpack-merge");
-const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const { merge } = require('webpack-merge');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "development",
-  devtool: "cheap-module-eval-source-map",
+  mode: 'development',
+  devtool: 'eval',
   module: {
     rules: [
       {
-        test: /\.scss|sass$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: { sourceMap: true }
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
             },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true,
-                config: { path: "./postcss.config.js" }
-              }
+          },
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                config: './postcss.config.js',
+              },
             },
-            {
-              loader: "sass-loader",
-              options: { sourceMap: true }
-            }
-          ]
-        })
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: { sourceMap: true }
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
             },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true,
-                config: { path: "./postcss.config.js" }
-              }
-            }
-          ]
-        })
-      }
-    ]
+          },
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                config: './postcss.config.js',
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({
-      filename: "[file].map"
+      filename: '[file].map',
     }),
-    new BrowserSyncPlugin({
-      proxy: "tattoolab.ru:8888",
-      port: 3000,
-      files: ["**/*.php"],
-      ghostMode: {
-        clicks: false,
-        location: false,
-        forms: false,
-        scroll: false
-      },
-      injectChanges: true,
-      logFileChanges: true,
-      logLevel: "debug",
-      logPrefix: "wepback",
-      notify: false,
-      reloadDelay: 0
-    })
-  ]
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
 });

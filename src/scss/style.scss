@@ -1,0 +1,55 @@
+@import './variables';
+@import './fonts';
+@import './mixins';
+@import './site/site';
+
+.wp-caption-text,
+.disable {
+  display: none !important;
+}
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  transition: none;
+  background: rgb(13, 10, 10);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.noScroll {
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+::selection {
+  background: $black;
+  color: $red;
+}
+::-moz-selection {
+  background: $black;
+  color: $red;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $red $black;
+  scrollbar-gutter: stable;
+}
+
+*::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: $black;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $red;
+  border-radius: 0;
+  border: 3px;
+}

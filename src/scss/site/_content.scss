@@ -1,0 +1,11 @@
+main {
+  width: calc(min(90%, 1140px));
+  padding-top: 100px;
+  margin: auto;
+}
+
+@media screen and (max-width: 530px) {
+  main {
+    width: 100%;
+  }
+}

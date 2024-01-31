@@ -1,61 +1,59 @@
-const common = require("./webpack.common");
-const merge = require("webpack-merge");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "production",
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: "vendors",
-          chunks: "all",
-          test: /node_modules/,
-          enforce: true
-        }
-      }
-    }
-  },
+  mode: 'production',
   module: {
     rules: [
       {
-        test: /\.scss|sass$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader"
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
             },
-            {
-              loader: "postcss-loader"
+          },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: './postcss.config.js',
+              },
             },
-            {
-              loader: "sass-loader"
-            }
-          ]
-        })
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader"
+        use: [
+          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
             },
-            {
-              loader: "postcss-loader",
-              options: {
-                config: { path: "./postcss.config.js" }
-              }
-            }
-          ]
-        })
-      }
-    ]
+          },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: './postcss.config.js',
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
-    new UglifyJSPlugin()
-  ]
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
 });

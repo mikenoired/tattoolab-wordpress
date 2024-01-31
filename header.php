@@ -14,41 +14,17 @@
   <meta name="application-name" content="Tattoo Laboratory">
   <meta name="robots" content="all">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory') ?>/dist/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory') ?>/dist/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory') ?>/dist/favicon-16x16.png">
-  <meta name="yandex-tableau-widget" content="logo=<?php bloginfo('template_directory') ?>/dist/yandex-tab-icon.png, color=#dc2229">
-  <link rel="mask-icon" href="<?php bloginfo('template_directory') ?>/dist/safari-pinned-tab.svg" color="#dc2229">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory') ?>/dist/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory') ?>/dist/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory') ?>/dist/fav/favicon-16x16.png">
+  <meta name="yandex-tableau-widget" content="logo=<?php bloginfo('template_directory') ?>/dist/fav/yandex-tab-icon.png, color=#dc2229">
+  <link rel="mask-icon" href="<?php bloginfo('template_directory') ?>/dist/fav/safari-pinned-tab.svg" color="#dc2229">
   <meta name="msapplication-name" content="#dc2229">
-  <meta name="msapplication-TileColor" content="<?php bloginfo('template_directory') ?>/dist/mstile-144x144.png">
+  <meta name="msapplication-TileColor" content="<?php bloginfo('template_directory') ?>/dist/fav/mstile-144x144.png">
   <meta name="theme-color" content="#dc2229">
 
-  <style>
-    html {
-      box-sizing: border-box
-    }
-
-    body {
-      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background: url(<?php bloginfo('template_directory') ?>/dist/assets/img/bg-min.jpg) fixed;
-      background-size: 100%;
-      overflow-x: hidden;
-      transition: none;
-    }
-
-    ::selection {
-      background: black;
-      color: #dc2229
-    }
-
-    ::-moz-selection {
-      background: black;
-      color: #dc2229
-    }
-  </style>
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-122315342-1"></script>
-  <script>
+  <!-- <script async src="//www.googletagmanager.com/gtag/js?id=UA-122315342-1"></script> -->
+  <!-- <script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -57,9 +33,7 @@
 
     gtag('js', new Date());
     gtag('config', 'UA-122315342-1');
-  </script>
-
-  <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700&display=fallback" rel="stylesheet">
+  </script> -->
 
   <meta property="og:url" content="<?php get_home_url(); ?>">
   <meta property="og:type" content="article">
@@ -72,49 +46,96 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <header style="background-image: url('<?php echo (get_header_image()) ?>');">
-    <a aria-label="Логотип Tattoo Laboratory" href="<?php echo home_url(); ?>" class="logo">
-      <svg xmlns="//www.w3.org/2000/svg" viewBox="0 0 1619 757.74">
-        <style>
-          .square {
-            fill: #dc2229;
-          }
 
-          .letter {
-            fill: #fff;
-          }
-        </style>
-        <g>
-          <rect class="square" x="132.5" width="484.45" height="484.45" />
-          <path class="letter" d="M790.16,139.51V451.33H890.94V139.51h52.29q-15.74,44.6-15.73,105.07h0q0,73,22.58,121.58t58.9,71q36.33,22.44,91.75,22.44,54.55,0,91.1-26Q1222.21,412,1240.68,376q21.51,41,54,61.13,36.33,22.44,91.76,22.44,54.55,0,91.09-26t55.87-72.72q19.33-46.71,19.34-119.72,0-100.56-44.26-156.37T1382.41,29q-79.79,0-124.5,56.81a175.09,175.09,0,0,0-17.28,26.76,171.13,171.13,0,0,0-17.85-27.75Q1178.51,29,1096.71,29q-62.12,0-103,34.42V37.27H0V139.51H102.8V451.33H303.17L319.3,383H435.39l16.55,68.35h194.7V139.51Zm-586.56,0h88.85L203.6,435.24ZM341.51,293.44,377.65,144.6l36.53,148.84ZM465.39,139.51h80.47v268ZM1147.9,336.33q-17.88,27-50.52,27-31.73,0-50.17-27.55t-18.44-90.61h0q0-63.65,18.55-91.19t49.17-27.55q32,0,50.63,27.13t18.67,85.93Q1165.79,309.34,1147.9,336.33Zm285.71,0q-17.89,27-50.52,27-31.74,0-50.18-27.55t-18.44-90.61h0q0-63.65,18.57-91.19t49.18-27.55q31.93,0,50.61,27.13t18.66,85.93Q1451.49,309.34,1433.61,336.33Z" />
-          <path class="letter" d="M1138.66,552.22c-.25-.58-1.73-.29-2,0-15.29,15.88-32.33,28.87-44.18,30,8.13-22.51,28.64-43.58,34.07-50.22,1.73-2.3-8.39-14.72-11.11-14.43-5.19.59-12.59,5.48-22.22,13.56-21.23,17.9-45.92,42.14-59,62.06,5.18-10.68,13.82-24.25,20.48-34.63,7.41-11.55,16.06-22.81,19.76-22.52,2,.29,2.72,1.73,2.72.58,0-7.22-9.39-18.47-15.31-18.47a5.31,5.31,0,0,0-3.46,1.44h0c-4.83,4.52-12.39,14.53-19.59,25.72A40.68,40.68,0,0,1,1028,548c-9.67.83-15.48-5.52-20.07-14.07-.48-.83-3.15-3-5.56-2.76-3.14.27-10.4,8.55-11.13,11.31-1,2.76,1.45,11,2.66,13.52-16.19,28.14-50.79,72.29-64.34,65.94-13.55-6.62,37-99.6,80.81-99.6h0c1.69,0,3.63.55,6,.81,1,0,1.68,0,.49-.82-1.7-1.66-5.57-4.69-14.76-4.69-38.23,0-91.22,45-91.22,89.95,0,10.48,7.27,21,18.39,21.79,25.65,1.67,75.73-38.06,82.26-74.76a18.66,18.66,0,0,0,7.26,1.11,42.12,42.12,0,0,0,14.28-2.49c.37-.13.73-.29,1.09-.43l-1.22,2.05c-9.88,16.43-21,36.37-27.16,52.82-3,6.64-4.2,12.13-3.7,14.72,1.72,8.08,7.65,17,14.81,15-5.43-2.88,9.38-28.27,22-44.16,16.79-21.65,28.41-33.19,51.11-48.78-6.42,8.66-14.32,25.4-14.32,33.48,0,3.47,7.39,13.57,11.85,13.57C1104.59,591.48,1134.2,559.15,1138.66,552.22Z" />
-          <path class="letter" d="M914.45,517.36c-13.37-5.26-57,32.42-76.26,59h0c19.06-41,43.08-77,67.59-111.37,15.1-21.06,26.25-33.24,32.93-29.37,4.71,3.05-5-13.3-18.82-13.3-2.22,0-5.44,1.94-9.41,5-11.63,10.81-21.29,24.11-30,37.13-23.94,35.63-52.46,82.24-67.33,116.46C798,596,781.28,611,771.8,614.06c0-2.23,1-5.57,2.49-9.46,7.48-17.8,29.93-48.11,31.15-45.33,1-3.34-7.47-18.63-12.45-15.85-6.23,3.89-22.42,21.43-26.92,25.86-12.93,12.24-47.82,40.33-56,43.39a2,2,0,0,1-1.75,0c-2.24-1.4,16.45-36.43,40.12-59,16.2-15.29,34.39-27,48.84-27.8,7.48-.56,12.21,3.61,12.21,12a22.22,22.22,0,0,1-2.74,10c-.25.27.25.55.75.27,2.49-3.61,4.74-8.34,4.74-13.06,0-13.09-12.47-17.53-21.93-17.53-23.86,0-50.75,16.79-71.06,37.17-.29-.62-1-1-1.77-.19-14.27,15.07-54.42,60.51-64.82,59.12,5.8-17.85,23.94-53.27,45-90.08,12.09-20.34,22-36.8,32.41-52.14,10.64-15.06,26.37-41.25,34.83-36.81,4.6,3.08-5.08-13.11-18.63-12.27-2.17,0-5.32,2.23-8.94,5.58-6,5.58-12.83,14.5-20.08,25.38h0c-12.58,19-28.06,43.22-43.06,70.26-29.52,53.27-40.63,80.32-40.63,88.68,0,3.07.48,3.63.72,4.19,1.45,4.18,6.77,10,8.71,11.15,2.18,1.4,4.59,2.51,7.74,1.12,9-3.81,28.63-24.8,45.06-43.92-5.3,9.29-8.39,18.05-8.39,25.09,0,5.57,6.47,16.13,11,18.64a7.55,7.55,0,0,0,2.24.83c10.46,0,59.05-46.69,66.53-55.05-4.74,7-11.46,19.75-14.47,30-1,4.17-2,7.51-2,10.29,0,5,4.73,10.85,8.22,13.07a8.15,8.15,0,0,0,4.23,1.67c9,0,27.3-16.83,45.17-36-5.07,14.2-5.38,21-4.73,22.91,1.74,4.43,6.69,10.25,8.92,11.08,2.47,1.66,4.95,2.77,7.92,1.39-11.14-1.39-1-17.45,6.19-29.09,25.77-42.39,75.26-71.46,79.48-71.22C903.8,542.29,858.74,616,833.73,616c-4.93,0-9.41-5.26-9.41-8,0-.83-1-.28-1,1.11,0,9.14,10.9,16.34,20.55,16.34,34.17,0,82.2-67.32,82.2-92.25C926.08,529.28,917.42,518.75,914.45,517.36Z" />
-          <path class="letter" d="M1603.89,517.58a4.74,4.74,0,0,0-3.66,1.67c-13.41,12.27-32.43,36.26-45.36,50.48-11.46,12.83-36.33,37.92-48,43.5,0-8.08,11.94-32.62,24.38-51,8.29-12.55,18.29-25.93,22.19-25.38,1.95.28,2.68,1.68,2.68.56,0-7.25-9.27-18.12-15.12-18.12a4.63,4.63,0,0,0-3.41,1.67c-6.1,5.57-16.1,18.13-24.39,31.79-1.88,3-3.76,6.09-5.59,9.26-12.35,11.16-24.84,19.36-34.14,20.26,8.13-22.51,28.64-43.58,34.07-50.22,1.73-2.3-8.4-14.72-11.11-14.43-5.2.59-12.59,5.48-22.22,13.56-21.23,17.9-45.93,42.14-59,62.06,5.18-10.68,13.83-24.25,20.49-34.63,7.41-11.55,16-22.81,19.76-22.52,2,.29,2.71,1.73,2.71.58,0-7.22-9.38-18.47-15.31-18.47a5.31,5.31,0,0,0-3.45,1.44h0c-3.7,3.45-9,10.13-14.49,18.08-4.5,3.1-12.43,9.07-24.19,10.27-9.67.83-15.48-5.52-20.08-14.07-.48-.83-3.14-3-5.56-2.76-3.14.27-10.39,8.55-11.12,11.31-1,2.76,1.47,11,2.66,13.52-16.2,28.14-50.79,72.29-64.34,65.94-13.55-6.62,37-99.6,80.81-99.6h0c1.69,0,3.61.55,6,.81,1,0,1.7,0,.49-.82-1.7-1.66-5.57-4.69-14.76-4.69-28.16,0-64.32,24.4-81.42,55.22-17.76,18.72-40.85,41.88-48.41,40.88,5.87-17.85,24.23-53.26,45.52-90.07,9.79-16.46,17.87-30.4,26.92-43.23,40.87-7,85.65-7.25,134.11-2.51,2.94.28,2-.28,0-.84-35-8.36-86.63-10.6-126-8.36,10.76-15.9,25.2-38.21,33-34,4.65,3.08-5.14-13.11-18.84-12.27-2.21,0-5.39,2.23-9.06,5.58h0c-6.11,5.57-13,14.49-32.07,42.95-27.41,3.63-54.33,11.43-53.35,24,.74,8.92,9.06,14.22,13,14.22-6.35-4.18,8.09-17.56,31.34-22.86-9,13.66-16.15,25.93-22.76,37.36-13.15,23.15-22.65,41.39-29.19,55.31-15.69,15.66-33.5,32-43.4,35.12,0-2.22,1-5.56,2.5-9.45,7.47-17.8,29.89-48.11,31.14-45.33,1-3.34-7.48-18.64-12.46-15.85-6.23,3.89-22.41,21.43-26.91,25.86-13,12.24-47.84,40.33-56.06,43.38a1.89,1.89,0,0,1-1.74,0c-2.24-1.39,16.44-36.42,40.11-58.95,16.2-15.29,34.39-27,48.83-27.81,7.48-.55,12.21,3.62,12.21,12a22.15,22.15,0,0,1-2.74,10c-.25.28.25.56.75.28,2.49-3.61,4.74-8.34,4.74-13.07,0-13.08-12.46-17.52-21.93-17.52-45.84,0-102.9,62-102.9,92.33,0,5.57,6.46,16.13,11,18.63a7.37,7.37,0,0,0,2.25.84c10.48,0,59-46.72,66.52-55.06h0c-4.73,7-11.46,19.74-14.45,30-1,4.17-2,7.51-2,10.29,0,5,4.73,10.85,8.22,13.07a8.18,8.18,0,0,0,4.23,1.67c9.18,0,28-17.48,46.2-37.1-4.18,10.11-6,16.64-6,20,0,3.07.49,3.63.73,4.19,1.47,4.18,6.86,10,8.81,11.15,2.21,1.39,4.65,2.51,7.83,1.12,8.88-3.71,28-23.73,44.31-42.43a65,65,0,0,0-3.73,21.22c0,10.48,7.26,21,18.39,21.79,25.64,1.67,75.72-38.06,82.25-74.76a18.66,18.66,0,0,0,7.26,1.11,42.11,42.11,0,0,0,14.27-2.49,55.11,55.11,0,0,0,13.94-7.78c-2,3.08-3.93,6.24-5.79,9.4-9.87,16.43-21,36.37-27.16,52.82-3,6.64-4.19,12.13-3.7,14.72,1.73,8.08,7.66,17,14.81,15-5.43-2.88,9.39-28.27,22-44.16,16.79-21.65,28.41-33.19,51.11-48.78-6.42,8.66-14.32,25.4-14.32,33.48,0,3.47,7.39,13.57,11.85,13.57,9.6,0,23.21-10.28,34-20.49-9.39,17.47-16.67,35.08-16.67,43.92,0,6.69,7.55,14.22,11.46,14.22h1.93c14.64-3.35,49-45.18,73.65-73.9-34.38,45.18-67.54,119.07-80.22,150.86-4.39,11.71-9.51,24-10.24,32.35-.73,5,2.93,20.36,12.68,19.24a3.61,3.61,0,0,0,2.68-.83c2.69-13.39,34.87-72,69.74-103.74,0,0,0-1.67-1.2-1.67-7.07,2.52-42.43,39.6-61.69,70,14.39-31,53.16-110.44,72.18-137.49h0c10.73-15.06,20.73-30.12,31-42.39,3.42-4.18,6.59-6.69,8.54-6.41,1.71.28,2.68,1.67,2.68.56C1619,528.73,1609.49,517.58,1603.89,517.58Z" />
-        </g>
-      </svg>
-    </a>
-    <section class="info">
-      <ul class="headerDescription"><?php dynamic_sidebar('headerdesc') ?></ul>
-      <?php if (has_nav_menu('social')) :
-        wp_nav_menu(array(
-          'theme_location' => 'social',
-          'container_class' => 'social',
-          'link_before' => '<span>',
-          'link_after' => '</span>' . tattoolab_get_svg(array('icon' => 'chain'))
-        ));
-      endif; ?>
-    </section>
+  <div class="devPeriod__button" id="devButton">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  </div>
+
+  <div class="devPeriod__block" id="devContent">
+    <div class="info">
+      <div id="devButtonClose" class="close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <?php dynamic_sidebar('dev_field'); ?>
+    </div>
+  </div>
+
+  <div class="loader" id="screenLoader"></div>
+
+  <div id="lightboxContainer" class="lightbox">
+    <div class="closeContainer" id="hoverLightbox">
+      <div class="close" id="closeLightbox">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <div class="zoomUp" id="zoomUp">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+        </svg>
+      </div>
+      <div class="zoomDown" id="zoomDown">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM13.5 10.5h-6" />
+        </svg>
+      </div>
+    </div>
+    <div class="leftContainer" id="hoverLightbox">
+      <div class="left" id="previousImage"></div>
+    </div>
+    <div class="rightContainer" id="hoverLightbox">
+      <div class="right" id="nextImage"></div>
+    </div>
+    <div id="lightboxWrapper"></div>
+  </div>
+
+  <div class="menuContainer" id="menuContainer">
     <?php
-    wp_nav_menu(array(
-      'theme_location' => 'header',
-      'container' => 'nav',
-      'container_class' => 'menuHeader',
-      'items_wrap' => '<ul>%3$s</ul>'
-    ));
-    wp_nav_menu(array(
-      'theme_location' => 'bottomHeader',
-      'container' => 'nav',
-      'container_class' => 'bottomHeader',
-      'items_wrap' => '<ul>%3$s<ul>'
-    )); ?>
+      wp_nav_menu(array(
+        'theme_location' => 'header',
+        'container' => 'nav',
+        'container_class' => 'menuNav',
+        'items_wrap' => '<ul>%3$s</ul>'
+      ));
+    ?>
+    <div class="contacts" id="headerContacts">
+      <?php dynamic_sidebar('footer_text'); ?>
+    </div>
+  </div>
+
+  <header 
+    id="header"
+    <?php if(!is_front_page()): ?>
+      class="min"
+    <?php endif; ?>
+  >
+    <div class="front_header">
+      <?php if(!is_front_page()): ?>
+      <a href="<?php echo home_url(); ?>" class="logo">
+        <div class="big"></div>
+        <div class="small"></div>
+      </a>
+      <?php endif; ?>
+      <?php if (is_front_page()): ?>
+      <div class="logo">
+        <div class="big"></div>
+        <div class="small"></div>
+      </div>
+      <?php endif; ?>
+      <div class="menuButton" id="menuButton">
+        <div class="menuIcon"></div>
+      </div>
+    </div>
   </header>
+
+  <?php if (is_front_page()): ?>
+    <div class="present" id="present">
+      <h1><?php dynamic_sidebar('present_text'); ?></h1>
+      <div class="video_cover"></div>
+      <div class="bgVideo"><?php dynamic_sidebar('present_video'); ?></div>
+    </div>
+  <?php endif; ?>

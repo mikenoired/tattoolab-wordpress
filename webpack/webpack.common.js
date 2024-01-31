@@ -1,23 +1,24 @@
-const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
-  src: path.join(__dirname, "../src"),
-  dist: path.join(__dirname, "../dist"),
-  assets: "assets/"
+  src: path.join(__dirname, '../src'),
+  dist: path.join(__dirname, '../dist')
 };
 
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
   entry: {
-    app: `${PATHS.src}/index.js`
+    app: `${PATHS.src}/index.js`,
   },
   output: {
-    filename: `${PATHS.assets}js/[name].js`,
-    path: PATHS.dist
+    filename: `./[name].js`,
+    path: PATHS.dist,
   },
   module: {
     rules: [
@@ -25,34 +26,42 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]"
-        }
+        type: 'asset/resource',
+        generator: {
+          filename: './favicons/[name][ext]',
+          outputPath: 'images',
+        },
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v+\d+\.\d+\.\d+)?$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]"
-        }
-      }
-    ]
+        test: /\.(woff(2)?|ttf|eot)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: './fonts/[name][ext]',
+        },
+      },
+    ],
   },
   plugins: [
-    require("autoprefixer"),
-    new ExtractTextPlugin({
-      filename: "[name].css",
-      allChunks: true
+    new StylelintPlugin({
+      fix: true,
+      files: [path.resolve(__dirname, 'src/**/*.scss')],
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/static`, to: "" }
-    ])
-  ]
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+    new ESLintPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../src/static/favicons'),
+          to: path.resolve(__dirname, '../dist/fav'),
+        },
+      ],
+    }),
+  ],
 };

@@ -1,0 +1,23 @@
+@mixin hover-link($color, $height, $posy) {
+  color: $color;
+  position: relative;
+  cursor: pointer;
+  line-height: 1;
+  &:before {
+    content: "";
+    bottom: $posy;
+    right: 0;
+    position: absolute;
+    width: 0%;
+    height: $height;
+    background-color: $color;
+    transition: .3s;
+  }
+  &:hover:before {
+    width: 100%;
+    left: 0;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}

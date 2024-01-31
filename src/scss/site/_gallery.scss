@@ -1,0 +1,57 @@
+main.gallery {
+  width: 100%;
+  .pageHeader {
+    width: calc(100%-110px);
+    background: none;
+    font-size: 56px;
+  }
+  article {
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    .wp-block-gallery {
+      margin: 0 auto;
+      width: calc(100%-110px);
+      padding: 0 55px;
+      .grid-sizer {
+        width: (100%/3) !important;
+      }
+      .grid-sizer {
+        height: 0;
+      }
+      .wp-block-image {
+        width: calc((100% / 3)-36px) !important;
+        margin: 0;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        img {
+          width: auto;
+          padding: 7px;
+        }
+        figcaption {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main.gallery {
+    article .wp-block-gallery {
+      width: calc(100%-30px);
+      padding: 0 15px;
+      .grid-sizer {
+        width: 50% !important;
+      }
+      .wp-block-image {
+        width: calc(50%-15px) !important;
+      }
+    }
+    .pageHeader {
+      padding: 40px 20px 0 20px;
+      width: calc(100% - 40px);
+    }
+  }
+}

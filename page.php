@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<main>
+<main id="pageContent">
   <?php
   if (have_posts()) :
     while (have_posts()) : the_post(); ?>
       <h1 class="pageHeader"><?php the_title(); ?></h1>
-      <article>
+      <article <?php post_class(); ?> id="article">
         <?php the_content(); ?>
       </article>
     <?php endwhile;
