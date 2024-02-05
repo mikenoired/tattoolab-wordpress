@@ -49,12 +49,15 @@ article {
   }
 }
 
-.singlePost {
+.single-post {
   .grid-sizer,
   article {
     width: 80%;
   }
   article {
+    &::before {
+      display: none;
+    }
     margin-inline: auto;
   }
 }

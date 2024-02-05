@@ -38,13 +38,13 @@ function widgetsInit() { // Widgets
 }
 add_action('widgets_init', 'widgetsInit');
 
-function example_add_post_class_to_single_post( $classes ) { // Add classes to single post
+function add_post_class_to_single_post( $classes ) { // Add classes to single post
 	if (is_single()) {
 		array_push( $classes, 'single-post' );
 	}
 	return $classes;
 }
-add_filter( 'post_class', 'example_add_post_class_to_single_post' );
+add_filter( 'post_class', 'add_post_class_to_single_post' );
 
 // Disable the emoji's
 function emoji_tms($plugins) {
