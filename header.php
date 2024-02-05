@@ -84,6 +84,10 @@
         'items_wrap' => '<ul>%3$s</ul>'
       ));
     ?>
+    <div class="background">
+      <div class="overlay"></div>
+      <?php dynamic_sidebar('menu_bg'); ?>
+    </div>
     <div class="contacts" id="headerContacts">
       <?php dynamic_sidebar('footer_text'); ?>
     </div>

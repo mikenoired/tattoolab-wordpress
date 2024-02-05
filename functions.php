@@ -32,6 +32,10 @@ function widgetsInit() { // Widgets
     'id' => 'present_video'
   ));
   register_sidebar(array(
+    'name' => 'Фоновое изображение меню',
+    'id' => 'menu_bg'
+  ));
+  register_sidebar(array(
     'name' => 'Ссылки на соц. сети',
     'id' => 'social_links'
   ) );
