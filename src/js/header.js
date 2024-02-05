@@ -5,12 +5,12 @@ gsap.registerPlugin(CustomEase);
 CustomEase.create('cubic', '0.19,1,0.22,1');
 
 window.addEventListener('scroll', () => {
-  // Header animation
+  const header = document.getElementById('header');
   if (window.location.pathname === '/') {
     if (window.scrollY > 0) {
-      document.getElementById('header').classList.add('min');
-    } else if (window.scrollY === 0) {
-      document.getElementById('header').classList.remove('min');
+      header.classList.add('min');
+    } else {
+      header.classList.remove('min');
     }
   }
 });

@@ -113,36 +113,36 @@ window.addEventListener('load', (e) => {
     mobileSwipe() {
       const getTouches = (ev) => ev.touches || ev.originalEvent.touches;
 
-      let xDown = null;
-      let yDown = null;
+      let initialX = null;
+      let initialY = null;
 
       document.addEventListener('touchstart', (ev) => {
         const firstTouch = getTouches(ev)[0];
-        xDown = firstTouch.clientX;
-        yDown = firstTouch.clientY;
+        initialX = firstTouch.clientX;
+        initialY = firstTouch.clientY;
       });
 
       document.addEventListener('touchmove', (ev) => {
-        if (!xDown || !yDown) {
+        if (!initialX || !initialY) {
           return;
         }
-        const xUp = ev.touches[0].clientX;
-        const yUp = ev.touches[0].clientY;
-        const xDiff = xDown - xUp;
-        const yDiff = yDown - yUp;
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {
-          if (xDiff > 0) {
+        const currentX = ev.touches[0].clientX;
+        const currentY = ev.touches[0].clientY;
+        const diffX = initialX - currentX;
+        const diffY = initialY - currentY;
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX > 0) {
             this.nextImage(this);
           } else {
             this.previousImage(this);
           }
-        } else if (yDiff > 0) {
+        } else if (diffY > 0) {
           this.closeImage(this);
         } else {
           this.closeImage(this);
         }
-        xDown = null;
-        yDown = null;
+        initialX = null;
+        initialY = null;
       });
     }
 
