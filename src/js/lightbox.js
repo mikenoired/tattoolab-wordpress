@@ -21,14 +21,11 @@ window.addEventListener('load', (e) => {
     next.remove();
   };
 
-  if (/Android|iPhone/i.test(navigator.userAgent)) {
+  if (/Android|iPhone/i.test(navigator.userAgent) || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i)) {
     imageSliding();
-  }
-  if (
-    navigator.userAgent.match(/Android/i) ||
-    navigator.userAgent.match(/iPhone/i)
-  ) {
-    imageSliding();
+    document.getElementById('lightboxContainer').classList.add('mobile');
+    document.getElementById('zoomUp').classList.add('disable');
+    document.getElementById('zoomDown').classList.add('disable');
   }
 
   class Lightbox {
@@ -54,7 +51,7 @@ window.addEventListener('load', (e) => {
       });
 
       document.body.classList.remove('noScroll');
-      window.onscroll = () => {};
+      window.onscroll = () => { };
     }
 
     zoomUp() {
@@ -111,40 +108,56 @@ window.addEventListener('load', (e) => {
     }
 
     mobileSwipe() {
-      const getTouches = (ev) => ev.touches || ev.originalEvent.touches;
+      let startX = null;
+      let startY = null;
+      let isSwiping = false;
 
-      let initialX = null;
-      let initialY = null;
+      const getTouches = (event) => event.touches || event.originalEvent.touches;
 
-      document.addEventListener('touchstart', (ev) => {
-        const firstTouch = getTouches(ev)[0];
-        initialX = firstTouch.clientX;
-        initialY = firstTouch.clientY;
+      document.addEventListener('touchstart', (event) => {
+        if (getTouches(event).length === 1) {
+          const firstTouch = getTouches(event)[0];
+          startX = firstTouch.clientX;
+          startY = firstTouch.clientY;
+          isSwiping = true;
+        }
       });
 
-      document.addEventListener('touchmove', (ev) => {
-        if (!initialX || !initialY) {
-          return;
-        }
-        const currentX = ev.touches[0].clientX;
-        const currentY = ev.touches[0].clientY;
-        const diffX = initialX - currentX;
-        const diffY = initialY - currentY;
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-          if (diffX > 0) {
-            this.nextImage(this);
-          } else {
-            this.previousImage(this);
+      document.addEventListener('touchmove', (event) => {
+        if (!isSwiping || getTouches(event).length > 1 || startX === null || startY === null) return;
+
+        event.preventDefault();
+
+        const currentX = event.touches[0].clientX;
+        const currentY = event.touches[0].clientY;
+
+        const diffX = startX - currentX;
+        const diffY = startY - currentY;
+
+        const SWIPE_THRESHOLD = 50;
+        if (Math.abs(diffX) > SWIPE_THRESHOLD || Math.abs(diffY) > SWIPE_THRESHOLD) {
+          if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 0) {
+              this.nextImage(this);
+            } else {
+              this.previousImage(this);
+            }
           }
-        } else if (diffY > 0) {
-          this.closeImage(this);
-        } else {
-          this.closeImage(this);
+
+          isSwiping = false;
+          startX = null;
+          startY = null;
         }
-        initialX = null;
-        initialY = null;
+      });
+
+      document.addEventListener('touchend', () => {
+        isSwiping = false;
+        startX = null;
+        startY = null;
       });
     }
+
+
 
     checkForNextImages() {
       switch (this.imageKey) {
@@ -213,15 +226,6 @@ window.addEventListener('load', (e) => {
       this.imageKey -= 1;
       this.refreshImage();
 
-      gsap.timeline().to(pr, {
-        keyframes: {
-          x: [0, -15, 0],
-          y: [],
-          ease: 'back.out(1.7)',
-        },
-        duration: 0.4,
-      });
-
       return this.checkForNextImages(this);
     }
 
@@ -233,15 +237,6 @@ window.addEventListener('load', (e) => {
       });
       this.imageKey += 1;
       this.refreshImage();
-
-      gsap.timeline().to(next, {
-        keyframes: {
-          x: [0, 15, 0],
-          y: [],
-          ease: 'back.out(1.7)',
-        },
-        duration: 0.4,
-      });
 
       return this.checkForNextImages(this);
     }
