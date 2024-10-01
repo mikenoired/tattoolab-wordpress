@@ -4,6 +4,10 @@
   }
 }
 
+.lightbox.mobile .closeContainer {
+  opacity: 1 !important;
+}
+
 .lightbox {
   overflow: hidden;
   position: fixed;
@@ -16,7 +20,7 @@
   #lightboxWrapper {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +33,9 @@
   }
   .none {
     display: none;
+  }
+  .closeContainer.active {
+    opacity: 1;
   }
   .closeContainer {
     position: absolute;
