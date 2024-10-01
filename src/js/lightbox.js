@@ -157,8 +157,6 @@ window.addEventListener('load', (e) => {
       });
     }
 
-
-
     checkForNextImages() {
       switch (this.imageKey) {
         case 0: // First image
@@ -200,9 +198,7 @@ window.addEventListener('load', (e) => {
         next.classList.add('none');
       }
 
-      if (this.imageURL === undefined) {
-        this.previousImage();
-      }
+      if (this.imageURL === undefined) this.previousImage();
     }
 
     refreshImage() {
@@ -220,7 +216,7 @@ window.addEventListener('load', (e) => {
     previousImage() {
       this.allImages = [];
       this.zoom = 1;
-      htmlImageLinks.forEach((item, i) => {
+      htmlImageLinks.forEach((_, i) => {
         this.allImages.push(htmlImageLinks[i].src);
       });
       this.imageKey -= 1;

@@ -2,9 +2,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-  <title><?php wp_title('|', true, 'right');
-          bloginfo('name'); ?></title>
-
+  <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -22,19 +20,6 @@
   <meta name="msapplication-name" content="#dc2229">
   <meta name="msapplication-TileColor" content="<?php bloginfo('template_directory') ?>/dist/fav/mstile-144x144.png">
   <meta name="theme-color" content="#dc2229">
-
-  <!-- <script async src="//www.googletagmanager.com/gtag/js?id=UA-122315342-1"></script> -->
-  <!-- <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-122315342-1');
-  </script> -->
-
   <meta property="og:url" content="<?php get_home_url(); ?>">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Tattoo Laboratory">

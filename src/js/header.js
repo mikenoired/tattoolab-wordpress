@@ -5,20 +5,13 @@ gsap.registerPlugin(CustomEase);
 CustomEase.create('cubic', '0.19,1,0.22,1');
 
 window.addEventListener('scroll', () => {
+  if (window.location.pathname !== '/') return;
   const header = document.getElementById('header');
-  if (window.location.pathname === '/') {
-    if (window.scrollY > 0) {
-      header.classList.add('min');
-    } else {
-      header.classList.remove('min');
-    }
-  }
+  window.scrollY > 0 ? header.classList.add('min') : header.classList.remove('min')
 });
 
 window.addEventListener('load', () => {
-  // Set animated contact elements
-  const text =
-    document.getElementById('headerContacts').children[0].children[0];
+  const text = document.getElementById('headerContacts').children[0].children[0];
   const array = text.innerHTML.split('<br>');
   array.forEach((item) => {
     const line = document.createElement('p');
