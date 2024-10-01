@@ -6,7 +6,7 @@ header {
   .front_header {
     display: flex;
     flex-direction: row;
-    width: calc(100%-100px);
+    width: calc(100% - 100px);
     height: 70px;
     padding: 25px 50px;
     justify-content: space-between;
@@ -53,7 +53,7 @@ header {
 header.min {
   background: $red;
   .front_header {
-    width: calc(100%-100px);
+    width: calc(100% - 100px);
     height: 40px;
     padding: 10px 50px;
     .logo {
@@ -85,7 +85,7 @@ header.menuActivated {
   background: $black;
   .menuNav {
     padding: 0 50px;
-    width: calc(100%-100px);
+    width: calc(100% - 100px);
     height: 100%;
     display: flex;
     align-items: center;
@@ -180,7 +180,7 @@ header.menuActivated {
   .contacts {
     position: absolute;
     bottom: 20px;
-    width: calc(100%-100px);
+    width: calc(100% - 100px);
     padding: 0 50px;
     z-index: 11;
     li {
@@ -203,7 +203,7 @@ header.menuActivated {
   }
 }
 
-@media screen and(max-width: 670px) {
+@media screen and (max-width: 670px) {
   header.min .front_header {
     padding: 10px 25px;
     width: calc(100% - 50px);

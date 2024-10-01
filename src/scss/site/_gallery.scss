@@ -1,7 +1,7 @@
 main.gallery {
   width: 100%;
   .pageHeader {
-    width: calc(100%-110px);
+    width: calc(100% - 110px);
     background: none;
     font-size: 56px;
   }
@@ -11,7 +11,7 @@ main.gallery {
     background: none;
     .wp-block-gallery {
       margin: 0 auto;
-      width: calc(100%-110px);
+      width: calc(100% - 110px);
       padding: 0 55px;
       .grid-sizer {
         width: (100%/3) !important;
@@ -20,7 +20,7 @@ main.gallery {
         height: 0;
       }
       .wp-block-image {
-        width: calc((100% / 3)-36px) !important;
+        width: calc((100% / 3) - 36px) !important;
         margin: 0;
         position: relative;
         cursor: pointer;
@@ -40,13 +40,13 @@ main.gallery {
 @media screen and (max-width: 900px) {
   main.gallery {
     article .wp-block-gallery {
-      width: calc(100%-30px);
+      width: calc(100% - 30px);
       padding: 0 15px;
       .grid-sizer {
         width: 50% !important;
       }
       .wp-block-image {
-        width: calc(50%-15px) !important;
+        width: calc(50% - 15px) !important;
       }
     }
     .pageHeader {
