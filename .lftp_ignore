@@ -1,0 +1,22 @@
+## Directories to ignore
+
+.vscode/**
+.env.**
+.git/
+.github/
+src/
+webpack/
+
+## Files to ignore
+
+.gitignore
+package.json
+README.md
+.babelrc
+.eslintignore
+.eslintrc.json
+.prettierrc.json
+.prettierignore
+.stylelintrc.js
+pnpm-lock.yaml
+postcss.config.js
